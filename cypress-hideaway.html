@@ -1,0 +1,3293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cypress Hideaway Glamping & Retreat | North-Central Florida</title>
+<meta name="description" content="Premium boutique glamping in North-Central Florida. Private sites, luxury tents, and eco-friendly retreats. Book direct and save.">
+<meta name="keywords" content="glamping Florida, luxury camping Florida, glamping North Florida, boutique camping retreat">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #2C4A35;
+  --forest-light: #3D6349;
+  --sage: #7A9E7E;
+  --sage-light: #A8C5AA;
+  --bark: #8B6F4E;
+  --bark-light: #B8956A;
+  --cream: #EDE8DC;
+  --sand: #DDD0B8;
+  --stone: #C4B49A;
+  --charcoal: #2A2A24;
+  --warm-white: #F2EDE3;
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --text-dark: #1E1E18;
+  --text-mid: #4A4A40;
+  --text-light: #7A7A6E;
+
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', sans-serif;
+
+  --radius: 4px;
+  --radius-lg: 12px;
+  --shadow: 0 4px 24px rgba(44,74,53,0.12);
+  --shadow-lg: 0 12px 48px rgba(44,74,53,0.18);
+  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  color: var(--text-dark);
+  background: var(--warm-white);
+  overflow-x: hidden;
+}
+
+/* ========== PAGE SYSTEM ========== */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ========== NAV ========== */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(242,237,227,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(196,180,154,0.3);
+  transition: var(--transition);
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--forest);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.nav-logo span { display: block; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bark); font-family: var(--sans); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--forest); }
+
+.nav-cta {
+  background: var(--forest);
+  color: var(--cream) !important;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2px;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.12em !important;
+}
+.nav-cta:hover { background: var(--forest-light); color: var(--cream) !important; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  width: 24px; height: 2px;
+  background: var(--forest);
+  transition: var(--transition);
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--forest);
+  color: var(--cream);
+}
+.btn-primary:hover {
+  background: var(--forest-light);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(44,74,53,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(245,240,232,0.6);
+}
+.btn-secondary:hover {
+  background: rgba(245,240,232,0.15);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--forest);
+  border: 1px solid var(--forest);
+}
+.btn-outline:hover {
+  background: var(--forest);
+  color: var(--cream);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(201,168,76,0.35);
+}
+
+/* ========== HERO ========== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--forest);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1800&q=85') center/cover no-repeat;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(6,14,8,0.72) 0%,
+    rgba(10,22,12,0.55) 45%,
+    rgba(6,14,8,0.35) 100%
+  );
+}
+
+.hero-trees { display: none; }
+.hero-stars  { display: none; }
+.hero-scene  { display: none; }
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 120px 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text { animation: fadeUp 0.9s ease both; }
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 1.2rem;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--sage-light);
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(245,240,232,0.7);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-light);
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+.trust-badge svg { width: 14px; height: 14px; }
+
+/* Booking Widget */
+.hero-booking {
+  background: rgba(242,237,227,0.98);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  animation: fadeUp 0.9s 0.2s ease both;
+}
+
+.booking-title {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  color: var(--forest);
+  margin-bottom: 0.3rem;
+}
+.booking-sub { font-size: 0.75rem; color: var(--bark); letter-spacing: 0.08em; margin-bottom: 1.5rem; }
+
+.booking-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.field-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.field-group.full { grid-column: 1/-1; }
+
+.field-group label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.field-group input, .field-group select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--sand);
+  border-radius: 2px;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  background: var(--warm-white);
+  transition: border-color 0.2s;
+  outline: none;
+}
+.field-group input:focus, .field-group select:focus {
+  border-color: var(--forest);
+}
+
+.booking-rate-note {
+  font-size: 0.68rem;
+  color: var(--sage);
+  text-align: center;
+  margin-top: 0.75rem;
+}
+.booking-rate-note strong { color: var(--forest); }
+
+/* ========== SECTION SHARED ========== */
+.section { padding: 5rem 2rem; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+
+.section-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bark);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-eyebrow::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--stone); }
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--forest);
+  margin-bottom: 1rem;
+}
+.section-title em { font-style: italic; color: var(--bark); }
+
+.section-body {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* ========== SOCIAL PROOF ========== */
+.trust-section {
+  background: var(--forest);
+  padding: 4rem 2rem;
+}
+
+.stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 0.1em; }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.review-card {
+  background: #3D6349;
+  border: 1px solid rgba(168,197,170,0.25);
+  border-radius: 6px;
+  padding: 1.75rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.review-card:hover {
+  background: #456b52;
+  transform: translateY(-2px);
+}
+
+.review-text {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(245,240,232,0.9);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.review-author { font-size: 0.75rem; letter-spacing: 0.1em; color: var(--sage-light); text-transform: uppercase; }
+
+.trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(245,240,232,0.1);
+}
+
+.trust-stat {
+  text-align: center;
+  color: var(--cream);
+}
+.trust-stat .num {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--gold-light);
+  line-height: 1;
+}
+.trust-stat .lbl { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.5); margin-top: 0.3rem; }
+
+/* ========== ACCOMMODATIONS ========== */
+.accomm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.accomm-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--cream);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.accomm-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.accomm-img {
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Nature scene SVGs */
+.scene-primitive { background: url('https://tnstateparks.com/assets/images/content-images/campgrounds/6085/eesp-campsite-primitive-campsite-9-002.jpg') center/cover no-repeat; }
+.scene-primitive svg { display: none; }
+.scene-basic { background: url('https://campmv.com/wp-content/uploads/2024/09/Tent-site-photo.jpg') center/cover no-repeat; }
+.scene-basic svg { display: none; }
+.scene-premium { background: url('https://hot-tent.com/cdn/shop/files/11small_e53e808e-41c8-4dc0-90b1-64faa9e4c7bc.jpg?v=1769605697&width=1500') center/cover no-repeat; }
+.scene-premium svg { display: none; }
+
+.scene-svg { width: 100%; height: 100%; }
+
+.accomm-badge {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: var(--gold);
+  color: var(--charcoal);
+  padding: 0.3rem 0.75rem;
+  border-radius: 2px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.accomm-body { padding: 1.75rem; }
+
+.accomm-type {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--bark);
+  margin-bottom: 0.5rem;
+}
+
+.accomm-name {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--forest);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.accomm-desc {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.accomm-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+.price-main {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  color: var(--forest);
+  font-weight: 600;
+}
+.price-per { font-size: 0.75rem; color: var(--text-light); }
+.price-weekly { font-size: 0.78rem; color: var(--bark); background: rgba(184,149,106,0.12); padding: 0.2rem 0.6rem; border-radius: 2px; }
+
+/* ========== VALUE PROPS ========== */
+.values-section { background: var(--sand); }
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.value-card {
+  background: var(--warm-white);
+  border-radius: 6px;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(44,74,53,0.07);
+  transition: var(--transition);
+}
+.value-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.value-icon {
+  width: 48px; height: 48px;
+  margin: 0 auto 1rem;
+  background: rgba(44,74,53,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.value-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--forest);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.value-desc { font-size: 0.78rem; color: var(--text-mid); line-height: 1.6; }
+
+/* ========== EXPERIENCES ========== */
+.experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.exp-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  cursor: pointer;
+}
+.exp-wrap:hover .exp-card { transform: scale(1.02); }
+
+.exp-card {
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+  transition: var(--transition);
+}
+
+.exp-caption {
+  padding: 0 0.25rem;
+}
+
+.exp-caption-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--forest);
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+}
+
+.exp-caption-desc {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+}
+
+.exp-fire { background: url('https://cdn.mos.cms.futurecdn.net/uCAQSpgQzbx82L6dFyvK7K-1200-80.jpg') center/cover no-repeat; }
+.exp-stars { background: url('https://www.explore.com/img/gallery/floridas-best-parks-and-observatories-for-stargazing-and-meteor-showers-according-to-amateur-astronomers/intro-1748176255.jpg') center/cover no-repeat; }
+.exp-trails { background: url('https://www.alltrails.com/mugen/image/location-app-router?url=https%3A%2F%2Fimages.alltrails.com%2FeyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvNzcxMjYzMzYvYTA2YWU3MjJmNTZkYzk5MWNjMWU1OTg5OTRiMDIyMjcuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoiMTA4MCIsImhlaWdodCI6IjcwMCIsImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbCwianBlZyI6eyJ0cmVsbGlzUXVhbnRpc2F0aW9uIjp0cnVlLCJvdmVyc2hvb3REZXJpbmdpbmciOnRydWUsIm9wdGltaXNlU2NhbnMiOnRydWUsInF1YW50aXNhdGlvblRhYmxlIjozfX19&w=3840&q=90') center/cover no-repeat; }
+.exp-kits { background: url('https://www.actionhub.com/wp-content/uploads/2022/09/Strawberry-Dark-Chocolate-Suzanne-Downing.jpg') center/cover no-repeat; }
+.exp-nature { background: url('https://livewildly.com/wp-content/uploads/DSC_0033-1024x681.jpg') center/cover no-repeat; }
+
+/* ========== BOOK DIRECT ========== */
+.book-direct {
+  background: linear-gradient(135deg, #1a2e1f 0%, #2C4A35 60%, #1E1A14 100%);
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-direct::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.1) 0%, transparent 60%);
+}
+
+.book-direct-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+
+.book-direct-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.book-direct h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: var(--cream);
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.book-direct-perks {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.perk {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: rgba(245,240,232,0.8);
+}
+.perk-check { color: var(--sage-light); font-size: 1rem; }
+
+.book-direct-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ========== GALLERY ========== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 220px);
+  gap: 0.75rem;
+  margin-top: 3rem;
+}
+
+.gallery-item {
+  border-radius: 6px;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.gallery-item:hover { transform: scale(1.02); }
+
+.gallery-item:nth-child(1) { grid-column: 1/5; grid-row: 1/2; }
+.gallery-item:nth-child(2) { grid-column: 5/9; grid-row: 1/3; }
+.gallery-item:nth-child(3) { grid-column: 9/13; grid-row: 1/2; }
+.gallery-item:nth-child(4) { grid-column: 1/5; grid-row: 2/3; }
+.gallery-item:nth-child(5) { grid-column: 9/13; grid-row: 2/3; }
+
+.gallery-scene {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+.gs-1 { background: linear-gradient(145deg, #1a2e1f 0%, #2d4a35 50%, #162215 100%); }
+.gs-2 { background: linear-gradient(160deg, #0a1008 0%, #1a2a18 40%, #253a22 100%); }
+.gs-3 { background: linear-gradient(135deg, #080c18 0%, #0e1628 50%, #162038 100%); }
+.gs-4 { background: linear-gradient(145deg, #1e1208 0%, #3a2810 50%, #2a1c0a 100%); }
+.gs-5 { background: linear-gradient(145deg, #0e1a10 0%, #1a3018 50%, #253822 100%); }
+
+/* ========== LOCATION ========== */
+.location-section { background: var(--cream); }
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.location-map {
+  background: linear-gradient(145deg, #d4e8d0 0%, #a8c5a0 30%, #7a9e78 60%, #4a7050 100%);
+  border-radius: 8px;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.map-label {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.map-pin {
+  width: 40px; height: 40px;
+  background: var(--forest);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  margin: 0 auto 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  position: relative;
+}
+.map-pin::after {
+  content: '';
+  width: 16px; height: 16px;
+  background: var(--cream);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.map-name {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--forest);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.8);
+}
+.map-region { font-size: 0.72rem; color: var(--forest-light); letter-spacing: 0.1em; text-shadow: 0 1px 3px rgba(255,255,255,0.8); }
+
+.nearby-list { list-style: none; }
+.nearby-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--sand);
+  font-size: 0.875rem;
+  color: var(--text-mid);
+}
+.nearby-list li::before {
+  content: '→';
+  color: var(--sage);
+  font-size: 0.8rem;
+}
+
+/* ========== HOUSE RULES ========== */
+.rules-section { background: var(--warm-white); }
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.rule-card {
+  background: var(--cream);
+  border-radius: 6px;
+  padding: 1.5rem;
+  border-left: 3px solid var(--sage);
+}
+.rule-card.warning { border-left-color: var(--bark); }
+
+.rule-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--forest);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.rule-text { font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; }
+
+/* ========== FINAL CTA ========== */
+.final-cta {
+  background: var(--charcoal);
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(44,74,53,0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(139,111,78,0.2) 0%, transparent 50%);
+}
+
+.final-cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+
+.final-cta-quote {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-style: italic;
+  color: var(--cream);
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.final-cta-sub {
+  font-size: 0.85rem;
+  color: rgba(245,240,232,0.5);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.05em;
+}
+
+.final-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--text-dark);
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-inner { max-width: 1280px; margin: 0 auto; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-name {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--cream);
+  margin-bottom: 0.25rem;
+}
+.footer-brand-sub { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--stone); margin-bottom: 1rem; }
+.footer-brand-desc { font-size: 0.8rem; color: rgba(245,240,232,0.5); line-height: 1.7; }
+
+.footer-col-title { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.5rem; }
+.footer-links a {
+  font-size: 0.8rem;
+  color: rgba(245,240,232,0.55);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--cream); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(245,240,232,0.08);
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy { font-size: 0.72rem; color: rgba(245,240,232,0.3); }
+
+/* ========== BOOKING PAGE ========== */
+.booking-page { padding-top: 72px; }
+.booking-hero {
+  background: var(--forest);
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+}
+.booking-hero h1 {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  color: var(--cream);
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+.booking-hero p { color: rgba(245,240,232,0.6); font-size: 0.9rem; }
+
+.booking-form-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.booking-form-main {}
+
+.form-card {
+  background: var(--warm-white);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+.form-card-title {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--forest);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--sand);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.form-row.single { grid-template-columns: 1fr; }
+
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); }
+.form-input {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--sand);
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  background: var(--warm-white);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus { border-color: var(--forest); }
+
+.accomm-options { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.accomm-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid var(--sand);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.accomm-option:hover, .accomm-option.selected {
+  border-color: var(--forest);
+  background: rgba(44,74,53,0.05);
+}
+
+.accomm-option input[type="radio"] { accent-color: var(--forest); }
+.accomm-option-info { flex: 1; }
+.accomm-option-name { font-weight: 500; font-size: 0.9rem; color: var(--text-dark); }
+.accomm-option-desc { font-size: 0.75rem; color: var(--text-light); margin-top: 0.15rem; }
+.accomm-option-price { font-family: var(--serif); font-size: 1.1rem; color: var(--forest); font-weight: 600; }
+
+.legal-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(139,111,78,0.08);
+  border: 1px solid rgba(139,111,78,0.2);
+  border-radius: 6px;
+  padding: 1rem;
+}
+.legal-check input[type="checkbox"] { accent-color: var(--forest); margin-top: 2px; flex-shrink: 0; }
+.legal-check label { font-size: 0.8rem; color: var(--text-mid); line-height: 1.5; cursor: pointer; }
+.legal-check a { color: var(--forest); }
+
+.booking-sidebar {}
+
+.price-card {
+  background: var(--warm-white);
+  border-radius: 8px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.price-card-badge {
+  background: var(--gold);
+  color: var(--charcoal);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.price-breakdown { border-top: 1px solid var(--sand); margin-top: 1rem; padding-top: 1rem; }
+.price-line { display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-mid); margin-bottom: 0.6rem; }
+.price-line.total { font-weight: 600; color: var(--text-dark); font-size: 1rem; border-top: 1px solid var(--sand); padding-top: 0.75rem; margin-top: 0.5rem; }
+
+.no-fee-note {
+  background: rgba(122,158,126,0.12);
+  border: 1px solid rgba(122,158,126,0.25);
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--forest);
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* ========== INNER PAGES ========== */
+.page-hero {
+  padding-top: 72px;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.ph-accommodations { background: linear-gradient(160deg, #1a2e1f 0%, #2C4A35 100%); }
+.ph-experiences { background: linear-gradient(160deg, #1e2010 0%, #3a4020 100%); }
+.ph-amenities { background: linear-gradient(160deg, #1a2830 0%, #2a3a45 100%); }
+.ph-gallery { background: linear-gradient(160deg, #12201a 0%, #1e3028 100%); }
+.ph-about { background: linear-gradient(160deg, #1e1a10 0%, #35280e 100%); }
+.ph-contact { background: linear-gradient(160deg, #1a1820 0%, #2a2535 100%); }
+.ph-policies { background: linear-gradient(160deg, #201010 0%, #3a2020 100%); }
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  width: 100%;
+}
+
+.page-hero-tag { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.page-hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.5rem); color: var(--cream); font-weight: 300; line-height: 1.15; }
+.page-hero p { color: rgba(245,240,232,0.65); font-size: 0.95rem; margin-top: 0.5rem; }
+
+/* ========== ACCOMMODATIONS PAGE ========== */
+.accomm-detail {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.accomm-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid var(--sand);
+}
+.accomm-detail-grid:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.accomm-detail-img {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 380px;
+  box-shadow: var(--shadow-lg);
+}
+
+.accomm-detail-body {}
+
+.accomm-tier {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bark);
+  margin-bottom: 0.75rem;
+}
+
+.accomm-detail-title {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  color: var(--forest);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.accomm-pricing-block {
+  background: var(--cream);
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 2rem;
+}
+.price-option { text-align: center; }
+.price-option-label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.25rem; }
+.price-option-amount { font-family: var(--serif); font-size: 2rem; color: var(--forest); font-weight: 600; line-height: 1; }
+.price-option-unit { font-size: 0.7rem; color: var(--text-light); }
+
+.feature-list { list-style: none; margin-bottom: 2rem; }
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  border-bottom: 1px solid rgba(196,180,154,0.2);
+}
+.feature-list li::before { content: '✓'; color: var(--sage); font-weight: 600; }
+
+/* ========== AMENITIES ========== */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+}
+
+.amenity-card {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+.amenity-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.amenity-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.amenity-title { font-family: var(--serif); font-size: 1.2rem; color: var(--forest); margin-bottom: 0.5rem; }
+.amenity-desc { font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; }
+
+/* ========== ABOUT PAGE ========== */
+.about-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.about-img {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 420px;
+  background: linear-gradient(145deg, #1a2e1f 0%, #2C4A35 60%, #1E1A14 100%);
+  position: relative;
+}
+
+.about-text h2 {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  color: var(--forest);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+.about-text p {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+.eco-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--sand);
+}
+
+.eco-value {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--cream);
+  border-radius: 6px;
+}
+.eco-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.eco-title { font-family: var(--serif); font-size: 1.1rem; color: var(--forest); margin-bottom: 0.4rem; }
+.eco-desc { font-size: 0.78rem; color: var(--text-mid); line-height: 1.6; }
+
+/* ========== CONTACT PAGE ========== */
+.contact-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+}
+
+.contact-info h2 { font-family: var(--serif); font-size: 2rem; color: var(--forest); margin-bottom: 1rem; }
+.contact-info p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.5rem; }
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text-mid);
+}
+.contact-detail-icon { font-size: 1.1rem; }
+
+.contact-form { background: var(--cream); border-radius: 8px; padding: 2.5rem; box-shadow: var(--shadow); }
+.contact-form h3 { font-family: var(--serif); font-size: 1.5rem; color: var(--forest); margin-bottom: 1.5rem; }
+
+/* ========== POLICIES PAGE ========== */
+.policies-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.policy-section {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--sand);
+}
+.policy-section:last-child { border-bottom: none; }
+
+.policy-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--forest);
+  margin-bottom: 1rem;
+}
+
+.policy-text { font-size: 0.875rem; color: var(--text-mid); line-height: 1.8; }
+.policy-text ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+.policy-text li { margin-bottom: 0.4rem; }
+
+.policy-alert {
+  background: rgba(139,111,78,0.1);
+  border-left: 3px solid var(--bark);
+  padding: 1rem 1.25rem;
+  border-radius: 0 4px 4px 0;
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--text-mid);
+}
+
+/* ========== EMAIL POPUP ========== */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30,30,24,0.7);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.popup-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popup {
+  background: var(--warm-white);
+  border-radius: 12px;
+  padding: 3rem;
+  max-width: 480px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  text-align: center;
+}
+
+.popup-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+.popup-eyebrow { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bark); margin-bottom: 0.75rem; }
+.popup h2 { font-family: var(--serif); font-size: 2rem; color: var(--forest); margin-bottom: 0.5rem; line-height: 1.2; }
+.popup-sub { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 1.75rem; line-height: 1.6; }
+
+.popup-form { display: flex; flex-direction: column; gap: 0.75rem; }
+.popup-input {
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--sand);
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  text-align: center;
+  outline: none;
+}
+.popup-input:focus { border-color: var(--forest); }
+
+.popup-disclaimer { font-size: 0.68rem; color: var(--text-light); margin-top: 0.5rem; }
+.popup-skip { font-size: 0.75rem; color: var(--text-light); cursor: pointer; margin-top: 0.75rem; text-decoration: underline; display: inline-block; }
+
+/* ========== ADD-ONS ========== */
+.addon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.addon-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 2px solid var(--sand);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--warm-white);
+  position: relative;
+}
+.addon-item:hover { border-color: var(--bark-light); background: rgba(184,149,106,0.04); }
+.addon-item.selected { border-color: var(--forest); background: rgba(44,74,53,0.05); }
+.addon-item.selected .addon-check { background: var(--forest); border-color: var(--forest); color: white; }
+
+.addon-check {
+  width: 20px; height: 20px;
+  border: 2px solid var(--sand);
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  transition: var(--transition);
+  margin-top: 1px;
+  color: transparent;
+}
+
+.addon-emoji { font-size: 1.3rem; flex-shrink: 0; line-height: 1.2; }
+
+.addon-info { flex: 1; min-width: 0; }
+.addon-name { font-size: 0.82rem; font-weight: 500; color: var(--text-dark); line-height: 1.3; margin-bottom: 0.2rem; }
+.addon-desc { font-size: 0.7rem; color: var(--text-light); line-height: 1.4; }
+.addon-price { font-size: 0.78rem; font-weight: 600; color: var(--forest); margin-top: 0.3rem; }
+
+.addon-popular {
+  position: absolute;
+  top: -1px; right: -1px;
+  background: var(--gold);
+  color: var(--charcoal);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0 4px 0 4px;
+}
+
+.addon-qty {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+.addon-qty button {
+  width: 22px; height: 22px;
+  border: 1px solid var(--sand);
+  border-radius: 3px;
+  background: var(--warm-white);
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: var(--forest);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+.addon-qty button:hover { background: var(--cream); }
+.addon-qty span { font-size: 0.78rem; font-weight: 600; min-width: 16px; text-align: center; color: var(--text-dark); }
+
+.addon-note {
+  font-size: 0.72rem;
+  color: var(--bark);
+  background: rgba(139,111,78,0.07);
+  border-radius: 4px;
+  padding: 0.6rem 0.875rem;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+.sidebar-addon-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-mid);
+  margin-bottom: 0.4rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--sage-light);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ========== MOBILE NAV ========== */
+.mobile-menu {
+  position: fixed;
+  top: 72px; left: 0; right: 0;
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--sand);
+  padding: 1.5rem 2rem;
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-mid);
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--sand);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-booking { order: -1; }
+  .accomm-grid { grid-template-columns: 1fr 1fr; }
+  .values-grid { grid-template-columns: repeat(3, 1fr); }
+  .reviews-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .accomm-detail-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .booking-form-section { grid-template-columns: 1fr; }
+  .booking-sidebar { order: -1; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .accomm-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .experiences-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .gallery-item { grid-column: auto !important; grid-row: auto !important; height: 200px; }
+  .location-grid { grid-template-columns: 1fr; }
+  .rules-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .eco-values { grid-template-columns: 1fr; }
+  .contact-content { grid-template-columns: 1fr; }
+  .amenities-grid { grid-template-columns: 1fr 1fr; }
+  .booking-fields { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .trust-strip { gap: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .amenities-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; }
+  .book-direct-perks { flex-direction: column; align-items: center; }
+  .final-cta-actions { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="showPage('home')">
+      Cypress Hideaway
+      <span>Glamping & Retreat · North-Central Florida</span>
+    </div>
+    <ul class="nav-links">
+      <li><a onclick="showPage('accommodations')">Accommodations</a></li>
+      <li><a onclick="showPage('experiences')">Experiences</a></li>
+      <li><a onclick="showPage('amenities')">Amenities</a></li>
+      <li><a onclick="showPage('gallery')">Gallery</a></li>
+      <li><a onclick="showPage('about')">About</a></li>
+      <li><a onclick="showPage('contact')">Contact</a></li>
+      <li><a class="nav-cta" onclick="showPage('booking')">Book Now</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('home');toggleMenu()">Home</a>
+  <a onclick="showPage('accommodations');toggleMenu()">Accommodations</a>
+  <a onclick="showPage('experiences');toggleMenu()">Experiences</a>
+  <a onclick="showPage('amenities');toggleMenu()">Amenities</a>
+  <a onclick="showPage('gallery');toggleMenu()">Gallery</a>
+  <a onclick="showPage('about');toggleMenu()">About</a>
+  <a onclick="showPage('contact');toggleMenu()">Contact</a>
+  <a onclick="showPage('policies');toggleMenu()">Policies</a>
+  <a onclick="showPage('booking');toggleMenu()">Book Now →</a>
+</div>
+
+<!-- ============================== -->
+<!-- ========== HOME PAGE ========= -->
+<!-- ============================== -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-eyebrow">North-Central Florida</div>
+        <h1>Escape to Nature<br>Without <em>Sacrificing</em><br>Comfort</h1>
+        <p class="hero-sub">Only 15 private sites on acres of secluded North-Central Florida wilderness. No crowds. No noise. Just you, the trees, and the kind of quiet most people have forgotten exists.</p>
+        <div class="hero-actions">
+          <button class="btn btn-gold" onclick="showPage('booking')">Check Availability</button>
+          <button class="btn btn-secondary" onclick="showPage('accommodations')">View Accommodations</button>
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Only 15 Private Sites Available — Reserve Early
+        </div>
+      </div>
+
+      <!-- Booking Widget -->
+      <div class="hero-booking">
+        <div class="booking-title">Check Availability</div>
+        <div class="booking-sub">Best rates guaranteed when you book direct</div>
+        <div class="booking-fields">
+          <div class="field-group">
+            <label>Check-In</label>
+            <input type="date" id="checkin">
+          </div>
+          <div class="field-group">
+            <label>Check-Out</label>
+            <input type="date" id="checkout">
+          </div>
+          <div class="field-group">
+            <label>Guests</label>
+            <select>
+              <option>1 Guest</option>
+              <option>2 Guests</option>
+              <option>3 Guests</option>
+              <option>4 Guests</option>
+              <option>5+ Guests</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label>Accommodation</label>
+            <select>
+              <option>Any</option>
+              <option>Primitive Campsite</option>
+              <option>Basic Tent</option>
+              <option>Premium Glamping</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="showPage('booking')">Search Availability →</button>
+        <div class="booking-rate-note">🔒 <strong>Best Rate Guarantee</strong> · No platform fees · Free cancellation on select dates</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST / SOCIAL PROOF -->
+  <section class="trust-section">
+    <div class="section-inner">
+      <div class="trust-strip">
+        <div class="trust-stat"><div class="num">15</div><div class="lbl">Sites — That's It</div></div>
+        <div class="trust-stat"><div class="num">5.0</div><div class="lbl">Star Rating</div></div>
+        <div class="trust-stat"><div class="num">Zero</div><div class="lbl">Crowds. Ever.</div></div>
+        <div class="trust-stat"><div class="num">Gated</div><div class="lbl">Private Entry</div></div>
+        <div class="trust-stat"><div class="num">Dark</div><div class="lbl">Skies Guaranteed</div></div>
+      </div>
+      <div style="text-align:center; margin-bottom:2rem;">
+        <div class="section-eyebrow" style="justify-content:center; color:var(--sage-light);">Guest Reviews</div>
+        <div style="font-family:var(--serif);font-size:2.2rem;color:var(--cream);font-weight:300;">What Our Guests Are Saying</div>
+        <div class="stars" style="margin-top:0.75rem;">★ ★ ★ ★ ★</div>
+        <div style="font-size:0.75rem;color:rgba(245,240,232,0.45);margin-top:0.4rem;letter-spacing:0.08em;">RATED 5 STARS BY EVERY GUEST</div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars" style="margin-bottom:1rem;font-size:0.85rem;">★ ★ ★ ★ ★</div>
+          <div class="review-text">"I didn't hear a single neighbor the entire stay. No generators, no music, no strangers walking past. Just birdsong, frogs at night, and total peace. Cypress Hideaway is the real thing."</div>
+          <div class="review-author">— Sarah & Tom M., Orlando</div>
+        </div>
+        <div class="review-card">
+          <div class="stars" style="margin-bottom:1rem;font-size:0.85rem;">★ ★ ★ ★ ★</div>
+          <div class="review-text">"We saw deer every morning, owls at dusk, and the Milky Way every single night. With only a handful of sites, it felt like we had the whole forest to ourselves. Absolutely irreplaceable."</div>
+          <div class="review-author">— Jenna R., Atlanta, GA</div>
+        </div>
+        <div class="review-card">
+          <div class="stars" style="margin-bottom:1rem;font-size:0.85rem;">★ ★ ★ ★ ★</div>
+          <div class="review-text">"Most campgrounds are just parking lots with trees. This is different. 15 sites means real breathing room, real privacy, real quiet. I slept better than I have in years. We're already rebooked."</div>
+          <div class="review-author">— Marcus D., Jacksonville, FL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCOMMODATIONS PREVIEW -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-eyebrow">Accommodations</div>
+      <div class="section-title">Choose Your <em>Perfect</em> Site</div>
+      <p class="section-body">With only 15 sites spread across acres of secluded Florida wilderness, every accommodation is genuinely private — no neighbors in eyeshot, no noise bleeding between sites. Just your space, your fire, and the forest.</p>
+      <div class="accomm-grid">
+
+        <!-- Primitive -->
+        <div class="accomm-card" onclick="showPage('accommodations')">
+          <div class="accomm-img scene-primitive">
+            <svg class="scene-svg" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+              <rect fill="#162010" width="400" height="240"/>
+              <ellipse cx="200" cy="280" rx="250" ry="80" fill="#1a2e18"/>
+              <!-- Trees -->
+              <polygon points="80,240 80,120 50,240" fill="#0d1a0e"/>
+              <polygon points="80,220 80,80 110,220" fill="#111f12"/>
+              <polygon points="320,240 320,130 290,240" fill="#0d1a0e"/>
+              <polygon points="320,210 320,90 350,210" fill="#0e1c10"/>
+              <polygon points="200,240 200,100 170,240" fill="#0c1a0d"/>
+              <polygon points="200,220 200,70 230,220" fill="#111f12"/>
+              <!-- Stars -->
+              <circle cx="100" cy="40" r="1.2" fill="rgba(255,255,255,0.9)"/>
+              <circle cx="180" cy="25" r="1.5" fill="rgba(255,255,255,0.8)"/>
+              <circle cx="260" cy="50" r="1" fill="rgba(255,255,255,0.7)"/>
+              <circle cx="330" cy="30" r="1.3" fill="rgba(255,255,255,0.9)"/>
+              <circle cx="50" cy="60" r="1" fill="rgba(255,255,255,0.6)"/>
+              <!-- Fire -->
+              <ellipse cx="200" cy="195" rx="18" ry="6" fill="#1a0c05"/>
+              <polygon points="192,195 200,160 208,195" fill="#c84820"/>
+              <polygon points="195,195 200,170 205,195" fill="#e87830"/>
+              <polygon points="196,195 200,175 204,195" fill="#f8c040"/>
+              <ellipse cx="200" cy="195" rx="12" ry="4" fill="#2a1208"/>
+            </svg>
+            <div class="accomm-badge">From $65/night</div>
+          </div>
+          <div class="accomm-body">
+            <div class="accomm-type">Pure Nature — Just the Essentials</div>
+            <div class="accomm-name">Primitive Campsite</div>
+            <div class="accomm-desc">Bring your own gear and connect with nature on your own terms. A designated site with fire ring, generator access, and shared bathhouse — simple, peaceful, and authentic.</div>
+            <div class="accomm-price">
+              <span class="price-main">$65</span><span class="price-per">/night</span>
+              <span class="price-weekly">$50/night Sun–Thu</span>
+            </div>
+            <button class="btn btn-outline" style="width:100%;justify-content:center;">View Details</button>
+          </div>
+        </div>
+
+        <!-- Basic -->
+        <div class="accomm-card" onclick="showPage('accommodations')">
+          <div class="accomm-img scene-basic">
+            <svg class="scene-svg" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+              <rect fill="#121c0e" width="400" height="240"/>
+              <!-- Tent -->
+              <polygon points="200,80 120,200 280,200" fill="#2a3d20"/>
+              <polygon points="200,80 160,200 200,200" fill="#334a28"/>
+              <rect x="170" y="165" width="60" height="35" fill="#1a2810" rx="2"/>
+              <rect x="185" y="165" width="30" height="35" fill="#0e1c08" rx="1"/>
+              <!-- Ground -->
+              <ellipse cx="200" cy="200" rx="120" ry="15" fill="#1a2a12" opacity="0.8"/>
+              <!-- Trees bg -->
+              <polygon points="30,240 30,130 10,240" fill="#0a1408" opacity="0.8"/>
+              <polygon points="370,240 370,140 390,240" fill="#0a1408" opacity="0.8"/>
+              <!-- Stars -->
+              <circle cx="80" cy="35" r="1.3" fill="rgba(255,255,255,0.85)"/>
+              <circle cx="200" cy="20" r="1.6" fill="rgba(201,168,76,0.8)"/>
+              <circle cx="320" cy="40" r="1.2" fill="rgba(255,255,255,0.7)"/>
+              <circle cx="140" cy="55" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="280" cy="28" r="1.1" fill="rgba(255,255,255,0.8)"/>
+              <!-- Light from tent -->
+              <ellipse cx="200" cy="200" rx="50" ry="8" fill="#c88830" opacity="0.15"/>
+            </svg>
+            <div class="accomm-badge">From $160/night</div>
+          </div>
+          <div class="accomm-body">
+            <div class="accomm-type">Mid-Tier Experience</div>
+            <div class="accomm-name">Basic Tent</div>
+            <div class="accomm-desc">No gear? No problem. Arrive to a fully set-up, weather-resistant tent with sleeping pads, lighting, camp chairs, and fire ring access — everything you need, nothing you don't.</div>
+            <div class="accomm-price">
+              <span class="price-main">$160</span><span class="price-per">/night</span>
+              <span class="price-weekly">$145/night Sun–Thu</span>
+            </div>
+            <button class="btn btn-outline" style="width:100%;justify-content:center;">View Details</button>
+          </div>
+        </div>
+
+        <!-- Premium -->
+        <div class="accomm-card" onclick="showPage('accommodations')">
+          <div class="accomm-img scene-premium">
+            <svg class="scene-svg" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+              <rect fill="#0e1814" width="400" height="240"/>
+              <!-- Luxury tent platform -->
+              <rect x="110" y="155" width="180" height="15" fill="#2a1c0e" rx="2"/>
+              <!-- Large premium tent -->
+              <polygon points="200,70 105,160 295,160" fill="#253530"/>
+              <polygon points="200,70 150,160 200,160" fill="#2e4040"/>
+              <polygon points="200,70 200,160 250,160" fill="#1e2c2c"/>
+              <!-- Tent front -->
+              <rect x="155" y="130" width="90" height="30" fill="#1a2520" rx="1"/>
+              <rect x="178" y="130" width="44" height="30" fill="#0a1510"/>
+              <!-- Warm glow -->
+              <ellipse cx="200" cy="200" rx="90" ry="20" fill="#c88830" opacity="0.12"/>
+              <!-- Deck lights -->
+              <circle cx="140" cy="160" r="2" fill="#f8d870" opacity="0.6"/>
+              <circle cx="260" cy="160" r="2" fill="#f8d870" opacity="0.6"/>
+              <!-- Stars -->
+              <circle cx="60" cy="30" r="1.4" fill="rgba(255,255,255,0.9)"/>
+              <circle cx="160" cy="20" r="1.7" fill="rgba(201,168,76,0.9)"/>
+              <circle cx="240" cy="15" r="1.2" fill="rgba(255,255,255,0.85)"/>
+              <circle cx="340" cy="35" r="1.5" fill="rgba(255,255,255,0.7)"/>
+              <circle cx="100" cy="50" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="300" cy="25" r="1.3" fill="rgba(255,255,255,0.75)"/>
+            </svg>
+            <div class="accomm-badge">From $275/night</div>
+          </div>
+          <div class="accomm-body">
+            <div class="accomm-type">Elevated Comfort — Nature Without Compromise</div>
+            <div class="accomm-name">Premium Glamping Tent</div>
+            <div class="accomm-desc">A spacious canvas tent with a real bed, dedicated seating, generator, fire ring, and outdoor chairs. Wake up to birdsong and fall asleep under the stars — effortlessly.</div>
+            <div class="accomm-price">
+              <span class="price-main">$275</span><span class="price-per">/night</span>
+              <span class="price-weekly">$260/night Sun–Thu</span>
+            </div>
+            <button class="btn btn-outline" style="width:100%;justify-content:center;">View Details</button>
+          </div>
+        </div>
+
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <button class="btn btn-primary" onclick="showPage('accommodations')">View All Accommodations</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PROPS -->
+  <section class="section values-section">
+    <div class="section-inner">
+      <div class="section-eyebrow">Why Cypress Hideaway</div>
+      <div class="section-title">Not a Campground.<br><em>A Boutique Retreat.</em></div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🌿</div>
+          <div class="value-title">Only 15 Sites — Total</div>
+          <div class="value-desc">We cap at 15 sites by choice. Fewer guests means more wildlife, more silence, and a nature experience that actually feels wild.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔇</div>
+          <div class="value-title">Genuinely Quiet Nights</div>
+          <div class="value-desc">Low density means no generators humming next door, no strangers' conversations drifting over, no music you didn't choose. Just the sounds of Florida after dark.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🦅</div>
+          <div class="value-title">More Wildlife, More Nature</div>
+          <div class="value-desc">Fewer people means more animals. Deer at dawn, barred owls at dusk, gopher tortoises, and a Milky Way that shows up every clear night.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔒</div>
+          <div class="value-title">Gated & Truly Private</div>
+          <div class="value-desc">A gated property with registered guests only — no day visitors, no walk-throughs, no strangers. Your site is yours, completely.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">☀️</div>
+          <div class="value-title">Solar-Powered & Eco-Friendly</div>
+          <div class="value-desc">100% solar energy, Leave No Trace principles, and minimal development. We keep it wild on purpose.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-eyebrow">Experiences</div>
+      <div class="section-title">Discover Your <em>Rhythm</em></div>
+      <p class="section-body">With only 15 sites and acres of land to yourself, the nature here is closer, quieter, and more alive than anything you'll find at a crowded campground. This is what the outdoors is supposed to feel like.</p>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem;">
+
+        <div style="display:flex;flex-direction:column;gap:0.75rem;cursor:pointer;" onclick="showPage('experiences')">
+          <div style="height:220px;border-radius:8px;background:url('https://cdn.mos.cms.futurecdn.net/uCAQSpgQzbx82L6dFyvK7K-1200-80.jpg') center/cover no-repeat;"></div>
+          <div>
+            <div style="font-family:var(--serif);font-size:1.2rem;color:var(--forest);margin-bottom:0.3rem;">🔥 Campfire Evenings</div>
+            <div style="font-size:0.82rem;color:var(--text-mid);line-height:1.65;">Your own private fire ring. Roast marshmallows, share stories, stare into the flames. Pure magic.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:0.75rem;cursor:pointer;" onclick="showPage('experiences')">
+          <div style="height:220px;border-radius:8px;background:url('https://www.explore.com/img/gallery/floridas-best-parks-and-observatories-for-stargazing-and-meteor-showers-according-to-amateur-astronomers/intro-1748176255.jpg') center/cover no-repeat;"></div>
+          <div>
+            <div style="font-family:var(--serif);font-size:1.2rem;color:var(--forest);margin-bottom:0.3rem;">✨ Stargazing</div>
+            <div style="font-size:0.82rem;color:var(--text-mid);line-height:1.65;">Far from city light pollution, our dark skies reveal the Milky Way in breathtaking clarity.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:0.75rem;cursor:pointer;" onclick="showPage('experiences')">
+          <div style="height:220px;border-radius:8px;background:url('https://www.alltrails.com/mugen/image/location-app-router?url=https%3A%2F%2Fimages.alltrails.com%2FeyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvNzcxMjYzMzYvYTA2YWU3MjJmNTZkYzk5MWNjMWU1OTg5OTRiMDIyMjcuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoiMTA4MCIsImhlaWdodCI6IjcwMCIsImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbCwianBlZyI6eyJ0cmVsbGlzUXVhbnRpc2F0aW9uIjp0cnVlLCJvdmVyc2hvb3REZXJpbmdpbmciOnRydWUsIm9wdGltaXNlU2NhbnMiOnRydWUsInF1YW50aXNhdGlvblRhYmxlIjozfX19&w=3840&q=90') center/cover no-repeat;"></div>
+          <div>
+            <div style="font-family:var(--serif);font-size:1.2rem;color:var(--forest);margin-bottom:0.3rem;">🚴 Bike & Hiking Trails</div>
+            <div style="font-size:0.82rem;color:var(--text-mid);line-height:1.65;">Explore miles of native Florida forest on nearby trails through cypress domes and longleaf pine.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:0.75rem;cursor:pointer;" onclick="showPage('experiences')">
+          <div style="height:220px;border-radius:8px;background:url('https://livewildly.com/wp-content/uploads/DSC_0033-1024x681.jpg') center/cover no-repeat;"></div>
+          <div>
+            <div style="font-family:var(--serif);font-size:1.2rem;color:var(--forest);margin-bottom:0.3rem;">🦋 Nature Immersion</div>
+            <div style="font-size:0.82rem;color:var(--text-mid);line-height:1.65;">Bird watching, wildlife spotting, and the rare luxury of doing absolutely nothing — beautifully.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:0.75rem;cursor:pointer;grid-column:1/-1;" onclick="showPage('experiences')">
+          <div style="height:340px;border-radius:8px;background:url('https://www.actionhub.com/wp-content/uploads/2022/09/Strawberry-Dark-Chocolate-Suzanne-Downing.jpg') center/cover no-repeat;"></div>
+          <div>
+            <div style="font-family:var(--serif);font-size:1.2rem;color:var(--forest);margin-bottom:0.3rem;">🍫 Curated Experience Kits</div>
+            <div style="font-size:0.82rem;color:var(--text-mid);line-height:1.65;">Upgrade your stay with our hand-curated kits: s'mores bundles, nature journaling sets, wildflower pressing, sunrise yoga mats, and local snack & beverage collections.</div>
+          </div>
+        </div>
+
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <button class="btn btn-outline" onclick="showPage('experiences')">Explore All Experiences</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK DIRECT -->
+  <section class="book-direct">
+    <div class="book-direct-inner">
+      <div class="book-direct-eyebrow">Only 15 Sites · Book Before They're Gone</div>
+      <h2>Book Direct<br>& <em style="font-family:var(--serif);font-style:italic;color:var(--gold-light)">Save</em></h2>
+      <p style="color:rgba(245,240,232,0.65);font-size:0.9rem;margin-bottom:2rem;max-width:520px;margin-left:auto;margin-right:auto;">We deliberately keep Cypress Hideaway small — 15 sites only, ever. That's what makes the quiet real, the privacy genuine, and the wildlife present. Sites fill quickly, especially weekends and holidays.</p>
+      <div class="book-direct-perks">
+        <div class="perk"><span class="perk-check">✓</span> Best available rates — no platform fees</div>
+        <div class="perk"><span class="perk-check">✓</span> Priority site selection</div>
+        <div class="perk"><span class="perk-check">✓</span> Complimentary firewood bundle</div>
+        <div class="perk"><span class="perk-check">✓</span> Early check-in when available</div>
+        <div class="perk"><span class="perk-check">✓</span> Direct support from our team</div>
+      </div>
+      <div class="book-direct-actions">
+        <button class="btn btn-gold" onclick="showPage('booking')">Book Direct Now</button>
+        <button class="btn btn-secondary" onclick="showPage('accommodations')">Compare Accommodations</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY PREVIEW -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-eyebrow">Gallery</div>
+      <div class="section-title">A Glimpse Into <em>Hideaway Life</em></div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div style="height:100%;background:url('https://crittercontroloftampa.com/wp-content/uploads/sleeping-raccoon-deck.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-scene gs-2" style="height:100%;">
+            <svg viewBox="0 0 300 480" style="width:100%;height:100%;" xmlns="http://www.w3.org/2000/svg">
+              <rect width="300" height="480" fill="#0a1008"/>
+              <rect y="360" width="300" height="120" fill="#1a2a18"/>
+              <!-- Milky way -->
+              <ellipse cx="150" cy="180" rx="180" ry="40" fill="rgba(255,255,255,0.04)" transform="rotate(-20,150,180)"/>
+              <ellipse cx="150" cy="180" rx="120" ry="25" fill="rgba(255,255,255,0.06)" transform="rotate(-20,150,180)"/>
+              <!-- Stars -->
+              <circle cx="30" cy="50" r="1.4" fill="rgba(255,255,255,0.9)"/>
+              <circle cx="80" cy="30" r="1.8" fill="rgba(201,168,76,0.9)"/>
+              <circle cx="140" cy="15" r="1.2" fill="rgba(255,255,255,0.85)"/>
+              <circle cx="200" cy="45" r="1.5" fill="rgba(255,255,255,0.7)"/>
+              <circle cx="260" cy="20" r="1.3" fill="rgba(255,255,255,0.8)"/>
+              <circle cx="50" cy="100" r="1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="110" cy="80" r="1.6" fill="rgba(255,255,255,0.75)"/>
+              <circle cx="180" cy="90" r="1.1" fill="rgba(255,255,255,0.65)"/>
+              <circle cx="240" cy="110" r="1.4" fill="rgba(255,255,255,0.8)"/>
+              <circle cx="270" cy="70" r="1" fill="rgba(255,255,255,0.55)"/>
+              <!-- Tree silhouettes -->
+              <polygon points="0,480 0,310 20,480" fill="#060e06"/>
+              <polygon points="40,480 20,310 60,480" fill="#060e06"/>
+              <polygon points="250,480 240,320 270,480" fill="#060e06"/>
+              <polygon points="290,480 275,300 300,480" fill="#060e06"/>
+            </svg>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div style="height:100%;background:url('https://kathrynwarmstrong.files.wordpress.com/2014/12/pea-hen-checking-out-pea-cock.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="gallery-item">
+          <div style="height:100%;background:url('https://livewildly.com/wp-content/uploads/DSC_0033-1024x681.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="gallery-item">
+          <div style="height:100%;background:linear-gradient(145deg,#1a2e1f,#2C4A35);display:flex;align-items:center;justify-content:center;color:rgba(245,240,232,0.3);font-size:0.7rem;letter-spacing:0.1em;">PHOTO COMING SOON</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <button class="btn btn-outline" onclick="showPage('gallery')">View Full Gallery</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="section location-section">
+    <div class="section-inner">
+      <div class="section-eyebrow">Location</div>
+      <div class="section-title">North-Central <em>Florida</em></div>
+      <div class="location-grid">
+        <div class="location-map">
+          <div class="map-label">
+            <div class="map-pin"></div>
+            <div class="map-name">Cypress Hideaway</div>
+            <div class="map-region">North-Central Florida</div>
+          </div>
+          <!-- Florida outline suggestion -->
+          <svg style="position:absolute;inset:0;opacity:0.08" viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg">
+            <path d="M160,20 L240,20 L260,40 L270,80 L280,140 L300,200 L310,250 L320,300 L300,340 L270,360 L240,370 L220,365 L210,350 L200,340 L190,320 L180,280 L170,240 L160,200 L150,160 L140,120 L130,80 L140,40Z" fill="white" stroke="white" stroke-width="2"/>
+          </svg>
+        </div>
+        <div>
+          <p style="font-size:1rem;color:var(--text-mid);line-height:1.8;margin-bottom:2rem;">Tucked into the forests of North-Central Florida, Cypress Hideaway sits far enough from city light and noise to make the wildlife feel wild and the nights feel genuinely dark. Close enough to Ocala, Gainesville, and the Gulf Coast to make the drive worth it — far enough away to feel like another world.</p>
+          <ul class="nearby-list">
+            <li>Ocala National Forest — 25 min</li>
+            <li>Silver Springs State Park — 30 min</li>
+            <li>Rainbow River — 35 min</li>
+            <li>Gainesville — 45 min</li>
+            <li>Crystal River & Gulf Coast — 1 hr</li>
+            <li>Tampa Bay Area — 1.5 hrs</li>
+            <li>Orlando — 1.5 hrs</li>
+          </ul>
+          <button class="btn btn-primary" style="margin-top:2rem" onclick="showPage('booking')">Plan Your Visit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOUSE RULES SUMMARY -->
+  <section class="section rules-section">
+    <div class="section-inner">
+      <div class="section-eyebrow">House Rules</div>
+      <div class="section-title">A Place of <em>Peace</em> — Protected for Everyone</div>
+      <p class="section-body">With only 15 sites, one inconsiderate guest affects everyone. Our rules aren't bureaucratic — they're what make the quiet real and the wildlife present. We take them seriously, and we ask you to as well.</p>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-title">🔇 Quiet Hours</div>
+          <div class="rule-text">10:00 PM to 8:00 AM. Loud music, generators, and disruptive noise are prohibited at all times.</div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-title">🐾 Pet Policy</div>
+          <div class="rule-text">Pets are welcome but must remain on a leash at all times. Please clean up after your pets.</div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-title">👥 Occupancy Limits</div>
+          <div class="rule-text">Maximum occupancy per site must not be exceeded. No unregistered guests.</div>
+        </div>
+        <div class="rule-card warning">
+          <div class="rule-title">🚫 No Parties or Events</div>
+          <div class="rule-text">We are a retreat, not an event venue. Gatherings that disturb other guests will result in removal.</div>
+        </div>
+        <div class="rule-card warning">
+          <div class="rule-title">🌧️ Weather Policy</div>
+          <div class="rule-text">No refunds are issued due to weather — except in the case of a named hurricane threatening the area.</div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-title">📋 Full Policy</div>
+          <div class="rule-text">Read our complete house rules, cancellation policy, and liability disclaimer before booking.</div>
+        </div>
+      </div>
+      <div style="margin-top:2rem;">
+        <button class="btn btn-outline" onclick="showPage('policies')">Read Full Policies</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="final-cta-inner">
+      <div class="final-cta-quote">"15 sites. Acres of wilderness. Zero crowds."</div>
+      <div class="final-cta-sub" style="font-size:0.95rem;color:rgba(245,240,232,0.75);margin-bottom:0.75rem;">This is what happens when a campground refuses to grow — the wildlife stays, the quiet stays, and every guest gets a nature experience that actually delivers.</div>
+      <div class="final-cta-sub">North-Central Florida · Gated & Private · Book Direct & Save</div>
+      <div class="final-cta-actions">
+        <button class="btn btn-gold" onclick="showPage('booking')">Check Availability</button>
+        <button class="btn btn-secondary" onclick="showPage('booking')">Book Your Stay</button>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+<!-- ================================ -->
+<!-- ========= BOOKING PAGE ========= -->
+<!-- ================================ -->
+<div class="page" id="page-booking">
+  <div class="booking-page" style="padding-top:72px;">
+    <div class="booking-hero">
+      <h1>Reserve Your Hideaway</h1>
+      <p>Book direct for the best rates — no platform fees, no middlemen.</p>
+    </div>
+    <div class="booking-form-section">
+      <div class="booking-form-main">
+
+        <!-- Stay Dates -->
+        <div class="form-card">
+          <div class="form-card-title">Your Stay</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Check-In Date</label>
+              <input class="form-input" type="date">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Check-Out Date</label>
+              <input class="form-input" type="date">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Adults</label>
+              <select class="form-input">
+                <option>1</option><option selected>2</option><option>3</option><option>4</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Children (under 12)</label>
+              <select class="form-input">
+                <option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accommodation Selection -->
+        <div class="form-card">
+          <div class="form-card-title">Choose Your Accommodation</div>
+          <div class="accomm-options">
+            <label class="accomm-option">
+              <input type="radio" name="accomm" value="primitive" onchange="updatePrice(65,'Primitive Campsite')">
+              <div class="accomm-option-info">
+                <div class="accomm-option-name">🏕️ Primitive Campsite</div>
+                <div class="accomm-option-desc">Bring your own gear — fire ring, generator access & shared bathhouse included</div>
+              </div>
+              <div class="accomm-option-price">$65/night</div>
+            </label>
+            <label class="accomm-option selected">
+              <input type="radio" name="accomm" value="basic" checked onchange="updatePrice(160,'Basic Tent')">
+              <div class="accomm-option-info">
+                <div class="accomm-option-name">⛺ Basic Tent</div>
+                <div class="accomm-option-desc">Weather-resistant tent, sleeping pads, camp chairs, lighting & fire ring — no gear needed</div>
+              </div>
+              <div class="accomm-option-price">$160/night</div>
+            </label>
+            <label class="accomm-option">
+              <input type="radio" name="accomm" value="premium" onchange="updatePrice(275,'Premium Glamping Tent')">
+              <div class="accomm-option-info">
+                <div class="accomm-option-name">🌟 Premium Glamping Tent</div>
+                <div class="accomm-option-desc">Bed with linens, generator, seating area, fire ring & bathhouse — nature, upgraded</div>
+              </div>
+              <div class="accomm-option-price">$275/night</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- ADD-ONS -->
+        <div class="form-card">
+          <div class="form-card-title">🎁 Enhance Your Stay</div>
+          <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:1.25rem;">Add extras to make your retreat unforgettable. Select anything you'd like included at check-in.</p>
+          <div class="addon-grid">
+
+            <!-- Firewood -->
+            <div class="addon-item" id="addon-firewood" onclick="toggleAddon('firewood')">
+              <div class="addon-check" id="check-firewood">✓</div>
+              <div class="addon-emoji">🪵</div>
+              <div class="addon-info">
+                <div class="addon-name">Firewood Bundle</div>
+                <div class="addon-desc">Seasoned hardwood, ready to burn — delivered to your site</div>
+                <div class="addon-price">$12 per bundle</div>
+                <div class="addon-qty" id="qty-firewood" style="display:none;" onclick="event.stopPropagation()">
+                  <button onclick="changeQty('firewood',12,-1)">−</button>
+                  <span id="qnum-firewood">1</span>
+                  <button onclick="changeQty('firewood',12,1)">+</button>
+                  <span style="font-size:0.68rem;color:var(--text-light)">bundles</span>
+                </div>
+              </div>
+              <div class="addon-popular">Popular</div>
+            </div>
+
+            <!-- AC Rental -->
+            <div class="addon-item" id="addon-ac" onclick="toggleAddon('ac')">
+              <div class="addon-check" id="check-ac">✓</div>
+              <div class="addon-emoji">❄️</div>
+              <div class="addon-info">
+                <div class="addon-name">Portable AC Unit</div>
+                <div class="addon-desc">Stay cool in the Florida heat — per night rental</div>
+                <div class="addon-price">$25 / night</div>
+              </div>
+            </div>
+
+            <!-- S'mores Kit -->
+            <div class="addon-item" id="addon-smores" onclick="toggleAddon('smores')">
+              <div class="addon-check" id="check-smores">✓</div>
+              <div class="addon-emoji">🎒</div>
+              <div class="addon-info">
+                <div class="addon-name">Experience Kit</div>
+                <div class="addon-desc">Curated outdoor activity kit to enhance your stay</div>
+                <div class="addon-price">$10 per kit</div>
+              </div>
+            </div>
+
+            <!-- Stargazing Kit -->
+            <div class="addon-item" id="addon-stargazing" onclick="toggleAddon('stargazing')">
+              <div class="addon-check" id="check-stargazing">✓</div>
+              <div class="addon-emoji">🔭</div>
+              <div class="addon-info">
+                <div class="addon-name">Stargazing Kit</div>
+                <div class="addon-desc">Binoculars, star chart, red flashlight & blanket for two</div>
+                <div class="addon-price">$45 per kit</div>
+              </div>
+            </div>
+
+            <!-- Pet Fee -->
+            <div class="addon-item" id="addon-pet" onclick="toggleAddon('pet')">
+              <div class="addon-check" id="check-pet">✓</div>
+              <div class="addon-emoji">🐾</div>
+              <div class="addon-info">
+                <div class="addon-name">Pet Fee</div>
+                <div class="addon-desc">Required for each pet brought to the property per stay</div>
+                <div class="addon-price">$20 per pet</div>
+                <div class="addon-qty" id="qty-pet" style="display:none;" onclick="event.stopPropagation()">
+                  <button onclick="changeQty('pet',20,-1)">−</button>
+                  <span id="qnum-pet">1</span>
+                  <button onclick="changeQty('pet',20,1)">+</button>
+                  <span style="font-size:0.68rem;color:var(--text-light)">pets</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Early Check-In -->
+            <div class="addon-item" id="addon-earlyin" onclick="toggleAddon('earlyin')">
+              <div class="addon-check" id="check-earlyin">✓</div>
+              <div class="addon-emoji">🌅</div>
+              <div class="addon-info">
+                <div class="addon-name">Early Check-In</div>
+                <div class="addon-desc">Arrive from 11 AM instead of 3 PM (subject to availability)</div>
+                <div class="addon-price">$30 (one-time)</div>
+              </div>
+            </div>
+
+            <!-- Late Checkout -->
+            <div class="addon-item" id="addon-lateout" onclick="toggleAddon('lateout')">
+              <div class="addon-check" id="check-lateout">✓</div>
+              <div class="addon-emoji">🌙</div>
+              <div class="addon-info">
+                <div class="addon-name">Late Check-Out</div>
+                <div class="addon-desc">Linger until 1 PM instead of 11 AM (subject to availability)</div>
+                <div class="addon-price">$30 (one-time)</div>
+              </div>
+            </div>
+
+            <!-- Welcome Basket -->
+            <div class="addon-item" id="addon-basket" onclick="toggleAddon('basket')">
+              <div class="addon-check" id="check-basket">✓</div>
+              <div class="addon-emoji">🧺</div>
+              <div class="addon-info">
+                <div class="addon-name">Welcome Basket</div>
+                <div class="addon-desc">Local honey, snacks, candle & handwritten welcome card</div>
+                <div class="addon-price">$55 per basket</div>
+              </div>
+              <div class="addon-popular">Gift Idea</div>
+            </div>
+
+          </div>
+          <div class="addon-note">💡 Add-ons are paid with your reservation and prepared for your arrival. Items subject to availability — we'll confirm by email within 24 hours.</div>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <div class="booking-sidebar">
+        <div class="price-card">
+          <div class="price-card-badge">⭐ Best Rate Guarantee</div>
+          <div style="font-family:var(--serif);font-size:1.1rem;color:var(--forest);margin-bottom:0.25rem;" id="sidebar-accomm">Basic Tent</div>
+          <div style="font-size:0.72rem;color:var(--text-light);letter-spacing:0.08em;">DIRECT BOOKING RATE</div>
+          <div class="price-breakdown">
+            <div class="price-line"><span id="sidebar-rate-label">$160 × 2 nights</span><span id="sidebar-subtotal">$320</span></div>
+            <div id="sidebar-addons-list"></div>
+            <div class="price-line"><span>Platform Fees</span><span style="color:var(--sage)">$0 — You Save!</span></div>
+            <div class="price-line"><span>Taxes & Fees</span><span>Included</span></div>
+            <div class="price-line total"><span>Total</span><span id="sidebar-total">$320</span></div>
+          </div>
+          <div class="no-fee-note">✓ No service fees. No booking platform markup.<br>What you see is what you pay.</div>
+          <div style="font-size:0.75rem;color:var(--text-light);line-height:1.6;margin-bottom:1.5rem;">
+            <strong style="color:var(--forest)">Book Direct Perks:</strong><br>
+            • Complimentary firewood bundle<br>
+            • Priority site selection<br>
+            • Early check-in when available<br>
+            • Direct support from our team
+          </div>
+
+          <!-- Guest Info -->
+          <div style="border-top:1px solid var(--sand);padding-top:1.5rem;margin-top:0.5rem;">
+            <div class="form-card-title" style="font-size:1rem;margin-bottom:1.25rem;">Your Information</div>
+            <div style="display:flex;flex-direction:column;gap:0.75rem;">
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input class="form-input" type="text" placeholder="Jane">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input class="form-input" type="text" placeholder="Smith">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input class="form-input" type="email" placeholder="jane@example.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input class="form-input" type="tel" placeholder="(555) 000-0000">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Special Requests (optional)</label>
+                <textarea class="form-input" rows="3" placeholder="Early check-in request, anniversary celebration, accessibility needs..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legal -->
+          <div style="border-top:1px solid var(--sand);padding-top:1.5rem;margin-top:1.5rem;">
+            <div class="form-card-title" style="font-size:1rem;margin-bottom:1rem;">Policies & Agreement</div>
+            <div class="legal-check">
+              <input type="checkbox" id="legal-agree" required>
+              <label for="legal-agree">I have read and agree to the <a onclick="showPage('policies')" style="cursor:pointer">House Rules</a>, <a onclick="showPage('policies')" style="cursor:pointer">Cancellation Policy</a>, and <a onclick="showPage('policies')" style="cursor:pointer">Weather Policy</a>. I understand that no refunds will be issued due to weather, except in the event of a named hurricane threatening the area. <strong>This checkbox is required before completing your reservation.</strong></label>
+            </div>
+            <button class="btn btn-gold" style="width:100%;justify-content:center;margin-top:1.25rem;padding:1.1rem;" onclick="handleBookingSubmit()">Complete Reservation →</button>
+            <div style="text-align:center;font-size:0.72rem;color:var(--text-light);margin-top:0.75rem;">🔒 Secure booking · No platform fees · Best rate guaranteed</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================================== -->
+<!-- ===== ACCOMMODATIONS PAGE ========= -->
+<!-- =================================== -->
+<div class="page" id="page-accommodations">
+  <div style="padding-top:72px;">
+    <div class="page-hero" style="min-height:280px;">
+      <div class="page-hero-bg ph-accommodations"></div>
+      <div class="page-hero-content">
+        <div class="page-hero-tag">Our Sites</div>
+        <h1>Accommodations</h1>
+        <p>Three tiers of nature retreat — all private, all exceptional.</p>
+      </div>
+    </div>
+    <div class="accomm-detail">
+
+      <!-- Primitive -->
+      <div class="accomm-detail-grid">
+        <div class="accomm-detail-img scene-primitive">
+          <svg style="width:100%;height:100%" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+            <rect width="500" height="380" fill="#162010"/>
+            <polygon points="60,380 60,180 30,380" fill="#0d1a0e"/>
+            <polygon points="60,340 60,140 90,340" fill="#111f12"/>
+            <polygon points="440,380 440,190 410,380" fill="#0d1a0e"/>
+            <polygon points="440,350 440,150 470,350" fill="#0e1c10"/>
+            <polygon points="250,380 250,160 220,380" fill="#0c1a0d"/>
+            <polygon points="250,350 250,120 280,350" fill="#111f12"/>
+            <polygon points="150,380 150,200 130,380" fill="#0d1a10"/>
+            <polygon points="380,380 380,210 360,380" fill="#0c1a0e"/>
+            <circle cx="100" cy="60" r="1.8" fill="rgba(255,255,255,0.9)"/>
+            <circle cx="250" cy="35" r="2.2" fill="rgba(201,168,76,0.8)"/>
+            <circle cx="380" cy="55" r="1.5" fill="rgba(255,255,255,0.7)"/>
+            <circle cx="50" cy="90" r="1.2" fill="rgba(255,255,255,0.6)"/>
+            <circle cx="430" cy="40" r="1.7" fill="rgba(255,255,255,0.8)"/>
+            <ellipse cx="250" cy="310" rx="35" ry="10" fill="#1a0c05"/>
+            <polygon points="234,310 250,260 266,310" fill="#c84820"/>
+            <polygon points="240,310 250,270 260,310" fill="#e87830"/>
+            <polygon points="243,310 250,278 257,310" fill="#f8c040"/>
+            <ellipse cx="250" cy="310" rx="24" ry="7" fill="#2a1208"/>
+            <rect x="200" y="330" width="100" height="8" fill="#1a2810" rx="2"/>
+          </svg>
+        </div>
+        <div class="accomm-detail-body">
+          <div class="accomm-tier">Pure Nature — Just the Essentials</div>
+          <div class="accomm-detail-title">Primitive<br>Campsite</div>
+          <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.8;margin-bottom:1.25rem;">For those who want a true back-to-basics outdoor experience. These sites are ideal for guests who prefer to bring their own gear and enjoy the authenticity of traditional camping in a peaceful, natural setting.</p>
+          <div class="accomm-pricing-block">
+            <div class="price-option">
+              <div class="price-option-label">Nightly</div>
+              <div class="price-option-amount">$65</div>
+              <div class="price-option-unit">per night</div>
+            </div>
+            <div class="price-option">
+              <div class="price-option-label">Sun–Thu Rate</div>
+              <div class="price-option-amount">$50</div>
+              <div class="price-option-unit">per night</div>
+            </div>
+          </div>
+          <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);margin-bottom:0.6rem;">What's Included</div>
+          <ul class="feature-list">
+            <li>Designated campsite area</li>
+            <li>Natural surroundings with added privacy</li>
+            <li>Fire ring for campfires</li>
+            <li>Portable electric generator for light use (device charging, small essentials)</li>
+            <li>Access to shared bathhouse (restrooms & showers)</li>
+          </ul>
+          <div style="background:var(--cream);border-radius:6px;padding:1.25rem;margin:1.25rem 0;">
+            <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);margin-bottom:0.75rem;">Why Choose a Primitive Site?</div>
+            <div style="display:flex;flex-direction:column;gap:0.4rem;">
+              <div style="font-size:0.82rem;color:var(--text-mid);display:flex;gap:0.5rem;"><span style="color:var(--sage)">✓</span> Perfect for experienced campers</div>
+              <div style="font-size:0.82rem;color:var(--text-mid);display:flex;gap:0.5rem;"><span style="color:var(--sage)">✓</span> Maximum connection with nature</div>
+              <div style="font-size:0.82rem;color:var(--text-mid);display:flex;gap:0.5rem;"><span style="color:var(--sage)">✓</span> Budget-friendly option</div>
+              <div style="font-size:0.82rem;color:var(--text-mid);display:flex;gap:0.5rem;"><span style="color:var(--sage)">✓</span> Quiet, low-density environment</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-mid);line-height:1.75;margin-bottom:1.5rem;font-style:italic;">"Unplug, slow down, and enjoy the simplicity of the outdoors — whether you're setting up your own tent, cooking over a fire, or just listening to nature."</p>
+          <div style="font-size:0.78rem;color:var(--bark);font-weight:500;margin-bottom:1.25rem;">Simple. Peaceful. Authentic.</div>
+          <button class="btn btn-primary" onclick="showPage('booking')">Book Primitive Site</button>
+        </div>
+      </div>
+
+      <!-- Basic -->
+      <div class="accomm-detail-grid">
+        <div class="accomm-detail-body">
+          <div class="accomm-tier">Comfortable Camping — No Gear Required</div>
+          <div class="accomm-detail-title">Basic<br>Tent</div>
+          <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.8;margin-bottom:1.25rem;">Perfect for guests who want to experience the outdoors without the hassle of bringing equipment. Each site is thoughtfully prepared with essential camping gear, allowing you to arrive, settle in, and enjoy nature right away — no packing, setup, or experience required.</p>
+          <div class="accomm-pricing-block">
+            <div class="price-option">
+              <div class="price-option-label">Nightly</div>
+              <div class="price-option-amount">$160</div>
+              <div class="price-option-unit">per night</div>
+            </div>
+            <div class="price-option">
+              <div class="price-option-label">Sun–Thu Rate</div>
+              <div class="price-option-amount">$145</div>
+              <div class="price-option-unit">per night</div>
+            </div>
+          </div>
+          <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);margin-bottom:0.6rem;">What's Included</div>
+          <ul class="feature-list">
+            <li>Spacious weather-resistant tent</li>
+            <li>Sleeping pads</li>
+            <li>Basic lighting</li>
+            <li>Portable electric generator for light use (device charging, small essentials)</li>
+            <li>Camp chairs</li>
+            <li>Fire ring access for campfires</li>
+            <li>Access to shared bathhouse</li>
+          </ul>
+          <div style="background:var(--cream);border-radius:6px;padding:1.25rem;margin:1.25rem 0;">
+            <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);margin-bottom:0.75rem;">Why Choose the Basic Setup?</div>
+            <div style="display:flex;flex-direction:column;gap:0.4rem;">
+              <div style="font-size:0.82rem;color:var(--text-mid);display:flex;gap:0.5rem;"><span style="color:var(--sage)">✓</span> Ideal for first-time campers</div>
+              <div style="font-size:0.82rem;color:var(--text-mid);display:flex;gap:0.5rem;"><span style="color:var(--sage)">✓</span> No equipment needed — just show up and relax</div>
+              <div style="font-size:0.82rem;color:var(--text-mid);display:flex;gap:0.5rem;"><span style="color:var(--sage)">✓</span> A step up from primitive camping with added comfort</div>
+              <div style="font-size:0.82rem;color:var(--text-mid);display:flex;gap:0.5rem;"><span style="color:var(--sage)">✓</span> Affordable way to experience glamping</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-mid);line-height:1.75;margin-bottom:1.5rem;font-style:italic;">"Enjoy the sounds of nature, the glow of a campfire, and the simplicity of outdoor living — without the stress of bringing your own gear."</p>
+          <div style="font-size:0.78rem;color:var(--bark);font-weight:500;margin-bottom:1.25rem;">Everything you need. Nothing you don't.</div>
+          <button class="btn btn-primary" onclick="showPage('booking')">Book Basic Tent</button>
+        </div>
+        <div class="accomm-detail-img scene-basic">
+          <svg style="width:100%;height:100%" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+            <rect width="500" height="380" fill="#121c0e"/>
+            <polygon points="250,100 140,280 360,280" fill="#2a3d20"/>
+            <polygon points="250,100 195,280 250,280" fill="#334a28"/>
+            <polygon points="250,100 250,280 305,280" fill="#1e2c18"/>
+            <rect x="210" y="230" width="80" height="50" fill="#1a2810" rx="2"/>
+            <rect x="235" y="230" width="30" height="50" fill="#0e1c08" rx="1"/>
+            <ellipse cx="250" cy="280" rx="130" ry="20" fill="#1a2a12" opacity="0.8"/>
+            <polygon points="30,380 30,200 10,380" fill="#0a1408" opacity="0.8"/>
+            <polygon points="470,380 470,210 490,380" fill="#0a1408" opacity="0.8"/>
+            <polygon points="80,380 80,240 60,380" fill="#0a1408" opacity="0.6"/>
+            <polygon points="420,380 420,250 440,380" fill="#0a1408" opacity="0.6"/>
+            <circle cx="100" cy="45" r="1.6" fill="rgba(255,255,255,0.85)"/>
+            <circle cx="250" cy="25" r="2" fill="rgba(201,168,76,0.8)"/>
+            <circle cx="400" cy="50" r="1.5" fill="rgba(255,255,255,0.7)"/>
+            <circle cx="180" cy="70" r="1.2" fill="rgba(255,255,255,0.6)"/>
+            <circle cx="350" cy="38" r="1.4" fill="rgba(255,255,255,0.75)"/>
+            <ellipse cx="250" cy="285" rx="65" ry="10" fill="#c88830" opacity="0.18"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Premium -->
+      <div class="accomm-detail-grid">
+        <div class="accomm-detail-img scene-premium">
+          <svg style="width:100%;height:100%" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+            <rect width="500" height="380" fill="#0e1814"/>
+            <rect x="130" y="240" width="240" height="20" fill="#2a1c0e" rx="3"/>
+            <polygon points="250,100 125,250 375,250" fill="#253530"/>
+            <polygon points="250,100 187,250 250,250" fill="#2e4040"/>
+            <polygon points="250,100 250,250 313,250" fill="#1e2c2c"/>
+            <rect x="195" y="210" width="110" height="40" fill="#1a2520" rx="1"/>
+            <rect x="222" y="210" width="56" height="40" fill="#0a1510"/>
+            <ellipse cx="250" cy="300" rx="120" ry="25" fill="#c88830" opacity="0.12"/>
+            <circle cx="178" cy="250" r="3" fill="#f8d870" opacity="0.7"/>
+            <circle cx="322" cy="250" r="3" fill="#f8d870" opacity="0.7"/>
+            <polygon points="30,380 30,220 10,380" fill="#0a1408" opacity="0.5"/>
+            <polygon points="470,380 470,230 490,380" fill="#0a1408" opacity="0.5"/>
+            <circle cx="80" cy="40" r="1.8" fill="rgba(255,255,255,0.9)"/>
+            <circle cx="200" cy="25" r="2.2" fill="rgba(201,168,76,0.9)"/>
+            <circle cx="310" cy="20" r="1.5" fill="rgba(255,255,255,0.85)"/>
+            <circle cx="420" cy="45" r="1.8" fill="rgba(255,255,255,0.7)"/>
+            <circle cx="140" cy="65" r="1.3" fill="rgba(255,255,255,0.65)"/>
+            <circle cx="370" cy="35" r="1.6" fill="rgba(255,255,255,0.75)"/>
+          </svg>
+        </div>
+        <div class="accomm-detail-body">
+          <div class="accomm-tier">Elevated Comfort — Nature Without Compromise</div>
+          <div class="accomm-detail-title">Premium<br>Glamping Tent</div>
+          <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.8;margin-bottom:1.25rem;">Thoughtfully designed with upgraded features and a spacious layout, our Premium Glamping Tents provide a relaxing retreat where you can unwind, recharge, and enjoy the outdoors in style — without giving up a single comfort.</p>
+          <div class="accomm-pricing-block">
+            <div class="price-option">
+              <div class="price-option-label">Nightly</div>
+              <div class="price-option-amount">$275</div>
+              <div class="price-option-unit">per night</div>
+            </div>
+            <div class="price-option">
+              <div class="price-option-label">Sun–Thu Rate</div>
+              <div class="price-option-amount">$260</div>
+              <div class="price-option-unit">per night</div>
+            </div>
+          </div>
+          <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);margin-bottom:0.6rem;">What's Included</div>
+          <ul class="feature-list">
+            <li>Spacious, high-quality canvas tent</li>
+            <li>Comfortable bed with linens</li>
+            <li>Interior lighting</li>
+            <li>Dedicated seating area</li>
+            <li>Portable electric generator for extended use (lighting, charging & small appliances)</li>
+            <li>Camp chairs and outdoor seating</li>
+            <li>Fire ring for campfires</li>
+            <li>Easy access to shared bathhouse (restrooms & hot showers)</li>
+          </ul>
+          <div style="background:var(--cream);border-radius:6px;padding:1.25rem;margin:1.25rem 0;">
+            <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);margin-bottom:0.75rem;">Why Choose the Premium Experience?</div>
+            <div style="display:flex;flex-direction:column;gap:0.4rem;">
+              <div style="font-size:0.82rem;color:var(--text-mid);display:flex;gap:0.5rem;"><span style="color:var(--sage)">✓</span> Ideal for couples and relaxed getaways</div>
+              <div style="font-size:0.82rem;color:var(--text-mid);display:flex;gap:0.5rem;"><span style="color:var(--sage)">✓</span> Elevated comfort without sacrificing the outdoor feel</div>
+              <div style="font-size:0.82rem;color:var(--text-mid);display:flex;gap:0.5rem;"><span style="color:var(--sage)">✓</span> More space and upgraded amenities</div>
+              <div style="font-size:0.82rem;color:var(--text-mid);display:flex;gap:0.5rem;"><span style="color:var(--sage)">✓</span> Perfect balance of nature and convenience</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-mid);line-height:1.75;margin-bottom:1.5rem;font-style:italic;">"Wake up to the sounds of nature, enjoy your morning coffee in a peaceful setting, and unwind under the stars — all while having the comforts that make your stay effortless and enjoyable."</p>
+          <div style="font-size:0.78rem;color:var(--bark);font-weight:500;margin-bottom:1.25rem;">Nature, upgraded.</div>
+          <button class="btn btn-gold" onclick="showPage('booking')">Book Premium Experience</button>
+        </div>
+      </div>
+
+    </div>
+    <div style="background:var(--forest);padding:3rem 2rem;text-align:center;">
+      <div style="font-family:var(--serif);font-size:1.1rem;color:rgba(245,240,232,0.7);margin-bottom:1.25rem;">Only 15 private sites total. Availability is limited.</div>
+      <button class="btn btn-gold" onclick="showPage('booking')">Check Availability Now</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================================== -->
+<!-- ======== EXPERIENCES PAGE ======== -->
+<!-- ================================== -->
+<div class="page" id="page-experiences">
+  <div style="padding-top:72px;">
+    <div class="page-hero">
+      <div class="page-hero-bg ph-experiences"></div>
+      <div class="page-hero-content">
+        <div class="page-hero-tag">Activities & Leisure</div>
+        <h1>Experiences</h1>
+        <p>Adventure, stillness, and everything in between.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-eyebrow">At the Retreat</div>
+        <div class="section-title">Your Days, <em>Your Way</em></div>
+        <p class="section-body" style="margin-bottom:3rem;">With only 15 sites across acres of secluded land, the wildlife here hasn't been scared off, the night sky hasn't been washed out, and the silence hasn't been crowded out. This is what the outdoors is supposed to feel like — and it only works because we keep it small.</p>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;">
+
+          <div style="display:flex;flex-direction:column;gap:0.875rem;">
+            <div style="height:240px;border-radius:8px;background:url('https://cdn.mos.cms.futurecdn.net/uCAQSpgQzbx82L6dFyvK7K-1200-80.jpg') center/cover no-repeat;"></div>
+            <div style="font-family:var(--serif);font-size:1.3rem;color:var(--forest);">🔥 Campfire Evenings</div>
+            <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.8;">Every site comes with its own fire ring. As the sun sets over the treeline, light your fire and let the evening slow to its natural pace. We provide firewood add-ons; Book Direct guests receive a complimentary bundle.</p>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:0.875rem;">
+            <div style="height:240px;border-radius:8px;background:url('https://www.explore.com/img/gallery/floridas-best-parks-and-observatories-for-stargazing-and-meteor-showers-according-to-amateur-astronomers/intro-1748176255.jpg') center/cover no-repeat;"></div>
+            <div style="font-family:var(--serif);font-size:1.3rem;color:var(--forest);">✨ Stargazing</div>
+            <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.8;">North-Central Florida's low light pollution makes our skies extraordinary. Lay back and watch the Milky Way emerge. Bring binoculars or a telescope — or just your eyes and a blanket.</p>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:0.875rem;">
+            <div style="height:240px;border-radius:8px;background:url('https://www.alltrails.com/mugen/image/location-app-router?url=https%3A%2F%2Fimages.alltrails.com%2FeyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvNzcxMjYzMzYvYTA2YWU3MjJmNTZkYzk5MWNjMWU1OTg5OTRiMDIyMjcuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoiMTA4MCIsImhlaWdodCI6IjcwMCIsImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbCwianBlZyI6eyJ0cmVsbGlzUXVhbnRpc2F0aW9uIjp0cnVlLCJvdmVyc2hvb3REZXJpbmdpbmciOnRydWUsIm9wdGltaXNlU2NhbnMiOnRydWUsInF1YW50aXNhdGlvblRhYmxlIjozfX19&w=3840&q=90') center/cover no-repeat;"></div>
+            <div style="font-family:var(--serif);font-size:1.3rem;color:var(--forest);">🚴 Biking & Hiking</div>
+            <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.8;">Miles of nearby trails wind through cypress domes, longleaf pine flatwoods, and sandhill habitats. From short scenic walks to full-day cycling adventures, Florida's outdoor playground surrounds you.</p>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:0.875rem;">
+            <div style="height:240px;border-radius:8px;background:url('https://livewildly.com/wp-content/uploads/DSC_0033-1024x681.jpg') center/cover no-repeat;"></div>
+            <div style="font-family:var(--serif);font-size:1.3rem;color:var(--forest);">🦋 Nature Immersion</div>
+            <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.8;">Florida is home to an extraordinary range of wildlife. Listen for barred owls at dusk, spot gopher tortoises in the morning, and watch migratory birds pass through. Every season brings something new.</p>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:0.875rem;grid-column:1/-1;">
+            <div style="height:340px;border-radius:8px;background:url('https://www.actionhub.com/wp-content/uploads/2022/09/Strawberry-Dark-Chocolate-Suzanne-Downing.jpg') center/cover no-repeat;"></div>
+            <div style="font-family:var(--serif);font-size:1.3rem;color:var(--forest);">🍫 Curated Experience Kits</div>
+            <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.8;">Upgrade your stay with our hand-curated kits: s'mores bundles, nature journaling sets, wildflower pressing, sunrise yoga mats, and local snack & beverage collections.</p>
+          </div>
+
+        </div>
+        <div style="margin-top:3rem;padding-top:3rem;border-top:1px solid var(--sand);">
+          <div class="section-eyebrow">Nearby</div>
+          <div class="section-title" style="margin-bottom:2rem;">Explore the <em>Region</em></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+            <div style="text-align:center;padding:1.5rem;background:var(--sand);border-radius:6px;">
+              <div style="font-size:2rem;margin-bottom:0.75rem;">🏊</div>
+              <div style="font-weight:600;color:var(--forest);margin-bottom:0.4rem;">Rainbow River</div>
+              <div style="font-size:0.8rem;color:var(--text-mid);">Crystal-clear spring swimming and tubing — 35 min away</div>
+            </div>
+            <div style="text-align:center;padding:1.5rem;background:var(--sand);border-radius:6px;">
+              <div style="font-size:2rem;margin-bottom:0.75rem;">🌊</div>
+              <div style="font-weight:600;color:var(--forest);margin-bottom:0.4rem;">Silver Springs</div>
+              <div style="font-size:0.8rem;color:var(--text-mid);">Glass-bottom boat tours and iconic Florida springs — 30 min</div>
+            </div>
+            <div style="text-align:center;padding:1.5rem;background:var(--sand);border-radius:6px;">
+              <div style="font-size:2rem;margin-bottom:0.75rem;">🌲</div>
+              <div style="font-weight:600;color:var(--forest);margin-bottom:0.4rem;">Ocala National Forest</div>
+              <div style="font-size:0.8rem;color:var(--text-mid);">America's southernmost national forest — 25 min away</div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:3rem;">
+          <button class="btn btn-primary" onclick="showPage('booking')">Book Your Retreat</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ================================ -->
+<!-- ======== AMENITIES PAGE ======== -->
+<!-- ================================ -->
+<div class="page" id="page-amenities">
+  <div style="padding-top:72px;">
+    <div class="page-hero">
+      <div class="page-hero-bg ph-amenities"></div>
+      <div class="page-hero-content">
+        <div class="page-hero-tag">Property Features</div>
+        <h1>Amenities</h1>
+        <p>Everything you need, nothing you don't.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-eyebrow">On-Site</div>
+        <div class="section-title">Designed for <em>Comfort & Privacy</em></div>
+      </div>
+    </section>
+    <div class="amenities-grid">
+      <div class="amenity-card">
+        <div class="amenity-icon">🚿</div>
+        <div class="amenity-title">Premium Bathhouse</div>
+        <div class="amenity-desc">Clean, modern bathhouse with hot showers, private changing areas, and well-maintained facilities. Open to all guests with convenient access from every site.</div>
+      </div>
+      <div class="amenity-card">
+        <div class="amenity-icon">☀️</div>
+        <div class="amenity-title">Solar Power</div>
+        <div class="amenity-desc">100% solar-powered infrastructure. We're proud to operate a fully eco-friendly retreat with minimal environmental impact — and reliable power for your stay.</div>
+      </div>
+      <div class="amenity-card">
+        <div class="amenity-icon">🔒</div>
+        <div class="amenity-title">Gated Entry</div>
+        <div class="amenity-desc">Controlled gated access ensures that only registered guests are on the property at all times. Your safety and privacy are our priority.</div>
+      </div>
+      <div class="amenity-card">
+        <div class="amenity-icon">🍫</div>
+        <div class="amenity-title">Vending & Supplies</div>
+        <div class="amenity-desc">On-site vending for snacks, beverages, and essential camping supplies so you're never caught without the basics during your stay.</div>
+      </div>
+      <div class="amenity-card">
+        <div class="amenity-icon">🔥</div>
+        <div class="amenity-title">Fire Rings</div>
+        <div class="amenity-desc">Every site features its own private fire ring. Firewood bundles available for purchase, with a complimentary bundle included for Book Direct guests.</div>
+      </div>
+      <div class="amenity-card">
+        <div class="amenity-icon">🚗</div>
+        <div class="amenity-title">Private Parking</div>
+        <div class="amenity-desc">Dedicated parking directly at or adjacent to your site. No long walks, no shared lots — your vehicle stays close and secure.</div>
+      </div>
+      <div class="amenity-card">
+        <div class="amenity-icon">🌐</div>
+        <div class="amenity-title">Limited Wi-Fi</div>
+        <div class="amenity-desc">Basic connectivity available in common areas. We intentionally keep it limited — this is a retreat, and we encourage you to disconnect.</div>
+      </div>
+      <div class="amenity-card">
+        <div class="amenity-icon">🦟</div>
+        <div class="amenity-title">Pest Management</div>
+        <div class="amenity-desc">Professional pest management program keeps your experience comfortable without compromising the natural environment.</div>
+      </div>
+      <div class="amenity-card">
+        <div class="amenity-icon">♻️</div>
+        <div class="amenity-title">Recycling & Waste</div>
+        <div class="amenity-desc">Clear recycling and waste stations throughout the property. Leave No Trace principles are part of our culture — we ask all guests to participate.</div>
+      </div>
+    </div>
+    <div style="text-align:center;padding:3rem 2rem;">
+      <button class="btn btn-primary" onclick="showPage('booking')">Reserve Your Site</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- ========= GALLERY PAGE ======= -->
+<!-- ============================== -->
+<div class="page" id="page-gallery">
+  <div style="padding-top:72px;">
+    <div class="page-hero">
+      <div class="page-hero-bg ph-gallery"></div>
+      <div class="page-hero-content">
+        <div class="page-hero-tag">Visual Stories</div>
+        <h1>Gallery</h1>
+        <p>A glimpse into the Cypress Hideaway experience.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="section-inner">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+          <!-- 9 gallery scenes -->
+          <div style="border-radius:8px;overflow:hidden;height:260px;cursor:pointer;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="width:100%;height:100%;background:url('https://crittercontroloftampa.com/wp-content/uploads/sleeping-raccoon-deck.jpg') center/cover no-repeat;"></div>
+          </div>
+          <div style="border-radius:8px;overflow:hidden;height:260px;cursor:pointer;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <svg style="width:100%;height:100%" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="260" fill="#080c18"/>
+              <ellipse cx="200" cy="160" rx="250" ry="50" fill="rgba(255,255,255,0.03)" transform="rotate(-15,200,160)"/>
+              <circle cx="50" cy="50" r="1.5" fill="rgba(255,255,255,0.9)"/>
+              <circle cx="130" cy="30" r="2" fill="rgba(201,168,76,0.85)"/>
+              <circle cx="210" cy="20" r="1.3" fill="rgba(255,255,255,0.8)"/>
+              <circle cx="290" cy="40" r="1.7" fill="rgba(255,255,255,0.75)"/>
+              <circle cx="370" cy="25" r="1.2" fill="rgba(255,255,255,0.7)"/>
+              <circle cx="80" cy="90" r="1.1" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="180" cy="80" r="1.4" fill="rgba(255,255,255,0.65)"/>
+              <circle cx="310" cy="70" r="1.2" fill="rgba(255,255,255,0.55)"/>
+              <polygon points="0,260 0,200 20,260" fill="#050a05"/>
+              <polygon points="380,260 380,210 400,260" fill="#050a05"/>
+            </svg>
+          </div>
+          <div style="border-radius:8px;overflow:hidden;height:260px;cursor:pointer;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <svg style="width:100%;height:100%" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="260" fill="#0e1814"/>
+              <rect x="100" y="140" width="200" height="15" fill="#2a1c0e" rx="2"/>
+              <polygon points="200,60 110,155 290,155" fill="#253530"/>
+              <polygon points="200,60 155,155 200,155" fill="#2e4040"/>
+              <rect x="165" y="125" width="70" height="30" fill="#1a2520" rx="1"/>
+              <circle cx="140" cy="155" r="2.5" fill="#f8d870" opacity="0.7"/>
+              <circle cx="260" cy="155" r="2.5" fill="#f8d870" opacity="0.7"/>
+              <ellipse cx="200" cy="240" rx="100" ry="22" fill="#c88830" opacity="0.1"/>
+              <circle cx="60" cy="30" r="1.5" fill="rgba(255,255,255,0.85)"/>
+              <circle cx="340" cy="40" r="1.8" fill="rgba(201,168,76,0.85)"/>
+            </svg>
+          </div>
+          <div style="border-radius:8px;overflow:hidden;height:260px;cursor:pointer;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <svg style="width:100%;height:100%" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="260" fill="#1e1208"/>
+              <rect x="80" y="110" width="240" height="130" fill="#2a2015" rx="3"/>
+              <rect x="80" y="100" width="240" height="18" fill="#3a2e18" rx="2"/>
+              <rect x="100" y="130" width="55" height="40" fill="#c88830" opacity="0.65" rx="2"/>
+              <rect x="245" y="130" width="55" height="40" fill="#c88830" opacity="0.55" rx="2"/>
+              <rect x="170" y="175" width="60" height="65" fill="#1a1008" rx="2"/>
+              <circle cx="120" cy="240" r="4" fill="#f8d070" opacity="0.4"/>
+              <circle cx="200" cy="245" r="4" fill="#f8d070" opacity="0.35"/>
+              <circle cx="280" cy="240" r="4" fill="#f8d070" opacity="0.4"/>
+              <circle cx="80" cy="45" r="1.3" fill="rgba(255,255,255,0.8)"/>
+              <circle cx="320" cy="35" r="1.5" fill="rgba(255,255,255,0.7)"/>
+            </svg>
+          </div>
+          <div style="border-radius:8px;overflow:hidden;height:260px;cursor:pointer;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <svg style="width:100%;height:100%" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="260" fill="#0e1a10"/>
+              <ellipse cx="200" cy="80" rx="180" ry="80" fill="rgba(248,200,80,0.06)"/>
+              <polygon points="30,260 30,80 15,260" fill="#0a1408"/>
+              <polygon points="30,240 30,60 50,240" fill="#0c180a"/>
+              <polygon points="90,260 90,100 75,260" fill="#0a1408"/>
+              <polygon points="90,235 90,75 110,235" fill="#0c180a"/>
+              <polygon points="300,260 300,90 285,260" fill="#0a1408"/>
+              <polygon points="300,235 300,65 320,235" fill="#0c1a08"/>
+              <polygon points="370,260 370,105 355,260" fill="#0a1408"/>
+              <rect y="215" width="400" height="45" fill="#1a2a12"/>
+              <polygon points="170,260 200,215 230,260" fill="#253820"/>
+              <circle cx="200" cy="50" r="18" fill="rgba(248,200,80,0.1)"/>
+            </svg>
+          </div>
+          <div style="border-radius:8px;overflow:hidden;height:260px;cursor:pointer;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <svg style="width:100%;height:100%" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="260" fill="#0a1628"/>
+              <rect y="180" width="400" height="80" fill="#0a1020"/>
+              <ellipse cx="200" cy="185" rx="250" ry="12" fill="rgba(100,140,200,0.15)"/>
+              <circle cx="60" cy="60" r="1.5" fill="rgba(255,255,255,0.85)"/>
+              <circle cx="150" cy="30" r="2" fill="rgba(201,168,76,0.9)"/>
+              <circle cx="250" cy="45" r="1.6" fill="rgba(255,255,255,0.75)"/>
+              <circle cx="340" cy="20" r="1.3" fill="rgba(255,255,255,0.8)"/>
+              <circle cx="100" cy="100" r="1.2" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="290" cy="85" r="1.4" fill="rgba(255,255,255,0.65)"/>
+              <ellipse cx="200" cy="180" rx="30" ry="8" fill="rgba(201,168,76,0.2)"/>
+              <polygon points="175,180 200,145 225,180" fill="#c84820" opacity="0.9"/>
+              <polygon points="182,180 200,155 218,180" fill="#f8a030" opacity="0.8"/>
+            </svg>
+          </div>
+          <div style="border-radius:8px;overflow:hidden;height:260px;cursor:pointer;transition:transform 0.3s;grid-column:1/3;" onmouseover="this.style.transform='scale(1.01)'" onmouseout="this.style.transform='scale(1)'">
+            <svg style="width:100%;height:100%" viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
+              <rect width="800" height="260" fill="#121c0e"/>
+              <polygon points="400,60 300,200 500,200" fill="#2a3d20"/>
+              <polygon points="400,60 355,200 400,200" fill="#334a28"/>
+              <polygon points="400,60 400,200 445,200" fill="#1e2c18"/>
+              <rect x="360" y="165" width="80" height="35" fill="#1a2810" rx="2"/>
+              <rect x="385" y="165" width="30" height="35" fill="#0e1c08" rx="1"/>
+              <!-- Surrounding landscape -->
+              <polygon points="80,260 80,160 55,260" fill="#0a1408" opacity="0.7"/>
+              <polygon points="150,260 150,180 125,260" fill="#0a1408" opacity="0.6"/>
+              <polygon points="650,260 650,170 625,260" fill="#0a1408" opacity="0.7"/>
+              <polygon points="720,260 720,155 745,260" fill="#0a1408" opacity="0.6"/>
+              <!-- Stars across panorama -->
+              <circle cx="100" cy="40" r="1.5" fill="rgba(255,255,255,0.85)"/>
+              <circle cx="250" cy="20" r="1.8" fill="rgba(201,168,76,0.8)"/>
+              <circle cx="400" cy="10" r="2" fill="rgba(255,255,255,0.9)"/>
+              <circle cx="550" cy="25" r="1.5" fill="rgba(201,168,76,0.75)"/>
+              <circle cx="700" cy="35" r="1.7" fill="rgba(255,255,255,0.8)"/>
+              <circle cx="180" cy="60" r="1.2" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="600" cy="55" r="1.3" fill="rgba(255,255,255,0.65)"/>
+              <ellipse cx="400" cy="200" rx="90" ry="15" fill="#c88830" opacity="0.18"/>
+            </svg>
+          </div>
+          <div style="border-radius:8px;overflow:hidden;height:260px;cursor:pointer;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <svg style="width:100%;height:100%" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="260" fill="#161008"/>
+              <ellipse cx="200" cy="130" rx="200" ry="130" fill="rgba(248,200,80,0.04)"/>
+              <rect x="50" y="100" width="300" height="150" fill="#221808" rx="4"/>
+              <rect x="50" y="88" width="300" height="20" fill="#2e2010" rx="3"/>
+              <rect x="75" y="118" width="50" height="35" fill="#c88830" opacity="0.6" rx="2"/>
+              <rect x="275" y="118" width="50" height="35" fill="#c88830" opacity="0.5" rx="2"/>
+              <rect x="175" y="165" width="50" height="85" fill="#150e06" rx="2"/>
+              <circle cx="100" cy="50" r="1.5" fill="rgba(255,255,255,0.8)"/>
+              <circle cx="300" cy="40" r="1.7" fill="rgba(255,255,255,0.75)"/>
+              <circle cx="200" cy="30" r="1.3" fill="rgba(201,168,76,0.8)"/>
+            </svg>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:3rem;">
+          <button class="btn btn-primary" onclick="showPage('booking')">Book Your Stay</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- ========== ABOUT PAGE ======== -->
+<!-- ============================== -->
+<div class="page" id="page-about">
+  <div style="padding-top:72px;">
+    <div class="page-hero">
+      <div class="page-hero-bg ph-about"></div>
+      <div class="page-hero-content">
+        <div class="page-hero-tag">Our Story</div>
+        <h1>About Us</h1>
+        <p>Why we built Cypress Hideaway — and what drives us every day.</p>
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="about-grid">
+        <div class="about-img" style="background:url('https://www.kuhl.com/borninthemountains/sites/default/files/2025-11/a14.jpg') center/cover no-repeat;">
+        </div>
+        <div class="about-text">
+          <h2>Built for the <em style="font-style:italic;color:var(--bark)">Seekers</em></h2>
+          <p>Cypress Hideaway was built on a deliberate decision: stay small. With only 15 sites, we made a choice that most campgrounds won't — to keep the land more wild than developed, more quiet than busy, more nature than noise.</p>
+          <p>That decision changes everything. Because we have fewer guests, the deer still graze near the sites at dawn. The barred owls still call at dusk. The Milky Way shows up on clear nights without a crowd of flashlights blocking the view. The silence between campsites is real silence — not just distance between RVs.</p>
+          <p>We're located in the heart of North-Central Florida, chosen for its ancient cypress trees, dark skies, and the kind of stillness that city life makes you forget was possible. We refuse to grow beyond 15 sites — not because we can't, but because doing so would destroy exactly what makes this place worth coming to.</p>
+          <button class="btn btn-primary" style="margin-top:1.5rem" onclick="showPage('booking')">Experience It Yourself</button>
+        </div>
+      </div>
+      <div class="eco-values">
+        <div class="eco-value">
+          <div class="eco-icon">☀️</div>
+          <div class="eco-title">Solar Powered</div>
+          <div class="eco-desc">100% of our energy comes from the sun. We operate without a fossil fuel footprint.</div>
+        </div>
+        <div class="eco-value">
+          <div class="eco-icon">🌿</div>
+          <div class="eco-title">Low Impact</div>
+          <div class="eco-desc">Minimal site development, native plantings, and Leave No Trace principles guide everything we do.</div>
+        </div>
+        <div class="eco-value">
+          <div class="eco-icon">♻️</div>
+          <div class="eco-title">Sustainable Ops</div>
+          <div class="eco-desc">From recycling programs to eco-friendly supplies, sustainability isn't a marketing word — it's how we run.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================== -->
+<!-- ========= CONTACT PAGE ======== -->
+<!-- =============================== -->
+<div class="page" id="page-contact">
+  <div style="padding-top:72px;">
+    <div class="page-hero">
+      <div class="page-hero-bg ph-contact"></div>
+      <div class="page-hero-content">
+        <div class="page-hero-tag">Get In Touch</div>
+        <h1>Contact Us</h1>
+        <p>We'd love to help plan your perfect retreat.</p>
+      </div>
+    </div>
+    <div class="contact-content">
+      <div class="contact-info">
+        <h2>We're Here to Help</h2>
+        <p>Whether you have a question about your upcoming stay, want help choosing the right accommodation, or just want to know more — reach out. We respond quickly and personally.</p>
+        <div class="contact-detail"><span class="contact-detail-icon">📍</span> North-Central Florida (exact address provided at booking)</div>
+        <div class="contact-detail"><span class="contact-detail-icon">📧</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="224a474e4e4d62415b52504751514a4b46474355435b0c414d4f">[email&#160;protected]</a></div>
+        <div class="contact-detail"><span class="contact-detail-icon">📞</span> (352) 555-0198</div>
+        <div class="contact-detail"><span class="contact-detail-icon">🕐</span> Responds within 24 hours</div>
+        <div style="margin-top:2rem;padding:1.5rem;background:var(--cream);border-radius:6px;">
+          <div style="font-family:var(--serif);font-size:1.1rem;color:var(--forest);margin-bottom:0.5rem;">Ready to Book?</div>
+          <div style="font-size:0.82rem;color:var(--text-mid);margin-bottom:1rem;">Skip the contact form and go straight to reserving your site.</div>
+          <button class="btn btn-primary" onclick="showPage('booking')">Check Availability</button>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input class="form-input" type="text" placeholder="Jane">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input class="form-input" type="text" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input class="form-input" type="email" placeholder="jane@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <select class="form-input">
+              <option>General Inquiry</option>
+              <option>Booking Question</option>
+              <option>Accommodation Info</option>
+              <option>Policies / Cancellation</option>
+              <option>Accessibility</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-input" rows="5" placeholder="Tell us how we can help..."></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="alert('Thank you for your message! We\'ll be in touch within 24 hours.')">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================ -->
+<!-- ========= POLICIES PAGE ======== -->
+<!-- ================================ -->
+<div class="page" id="page-policies">
+  <div style="padding-top:72px;">
+    <div class="page-hero">
+      <div class="page-hero-bg ph-policies"></div>
+      <div class="page-hero-content">
+        <div class="page-hero-tag">Policies & Rules</div>
+        <h1>Policies</h1>
+        <p>Please read carefully before booking.</p>
+      </div>
+    </div>
+    <div class="policies-content">
+
+      <div class="policy-section">
+        <div class="policy-title">🏡 House Rules</div>
+        <div class="policy-text">
+          Cypress Hideaway is designed as a peaceful retreat for all guests. By booking, you agree to respect these rules for the enjoyment of all.
+          <ul>
+            <li>No parties, large gatherings, or events of any kind</li>
+            <li>Quiet hours are strictly enforced: 10:00 PM – 8:00 AM daily</li>
+            <li>Generators are prohibited at all times</li>
+            <li>No loud music or amplified sound at any time</li>
+            <li>All guests must be registered at check-in — no unregistered visitors allowed on property</li>
+            <li>Respect other guests' privacy and space</li>
+            <li>Do not enter any site other than your own</li>
+            <li>Fires are permitted in designated fire rings only — never leave unattended</li>
+            <li>Do not cut or damage trees, vegetation, or property</li>
+            <li>Occupancy limits per site must not be exceeded</li>
+            <li>No weapons permitted on property</li>
+            <li>Management reserves the right to remove guests without refund for violations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="policy-title">🐾 Pet Policy</div>
+        <div class="policy-text">
+          We welcome well-behaved pets with advance notice. Please inform us of your pet(s) at booking.
+          <ul>
+            <li>Maximum 2 pets per site (additional approval required)</li>
+            <li>Pets must remain on a leash (6 ft max) at all times when outside your tent or vehicle</li>
+            <li>Pets are not permitted in the bathhouse or any enclosed common areas</li>
+            <li>You are responsible for cleaning up after your pet immediately</li>
+            <li>Pets must not be left unattended on-site</li>
+            <li>Excessive barking or aggressive behavior will result in immediate removal</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="policy-title">📅 Cancellation Policy</div>
+        <div class="policy-text">
+          We understand plans change. Our cancellation policy is designed to be fair while protecting the availability of our limited sites.
+          <ul>
+            <li><strong>More than 14 days before arrival:</strong> Full refund minus a $25 processing fee</li>
+            <li><strong>7–14 days before arrival:</strong> 50% refund of total reservation cost</li>
+            <li><strong>Less than 7 days before arrival:</strong> No refund</li>
+            <li>Modifications to dates are subject to availability and may incur fees</li>
+            <li>No-shows are charged in full</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="policy-title">🌧️ Weather Policy</div>
+        <div class="policy-text">
+          Florida weather is part of the outdoor experience. We do not issue refunds due to weather, with one exception.
+          <div class="policy-alert">
+            <strong>Named Hurricane Exception:</strong> If a named hurricane is forecast to make landfall within 75 miles of our property within 72 hours of your check-in date, we will issue a full credit valid for 12 months. No cash refunds are provided for weather events under any other circumstances.
+          </div>
+          <ul style="margin-top:1rem;">
+            <li>Rain, thunderstorms, and extreme heat are not grounds for refund or cancellation</li>
+            <li>We recommend travel insurance for additional coverage</li>
+            <li>Cold snaps, wind, or other weather events are not refundable</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="policy-title">⚠️ Liability Disclaimer</div>
+        <div class="policy-text">
+          Cypress Hideaway Glamping & Retreat operates in a natural outdoor environment. By booking and entering the property, guests acknowledge and accept the following:
+          <ul>
+            <li>Guests participate in all activities at their own risk</li>
+            <li>Cypress Hideaway is not responsible for injuries, illness, or accidents occurring on the property</li>
+            <li>Wildlife encounters (insects, reptiles, mammals) are inherent to outdoor environments — we are not liable for wildlife-related incidents</li>
+            <li>Guests are responsible for their own safety, belongings, and the behavior of all members of their party including children and pets</li>
+            <li>Any damage to property caused by guests will be billed to the card on file</li>
+            <li>Cypress Hideaway is not responsible for loss or theft of personal belongings</li>
+          </ul>
+          By completing your reservation, you confirm that you have read, understood, and agreed to all policies listed on this page.
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;padding:2rem;background:var(--cream);">
+      <div style="font-family:var(--serif);font-size:1.2rem;color:var(--forest);margin-bottom:1rem;">Questions about our policies?</div>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <button class="btn btn-outline" onclick="showPage('contact')">Contact Us</button>
+        <button class="btn btn-primary" onclick="showPage('booking')">Book Your Stay</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Cypress Hideaway</div>
+        <div class="footer-brand-sub">Glamping & Retreat · North-Central Florida</div>
+        <div class="footer-brand-desc">Only 15 private sites in North-Central Florida — by design. Fewer guests means more wildlife, more quiet, more night sky, and a nature experience that actually delivers. Book direct for the best rate.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('accommodations')">Accommodations</a></li>
+          <li><a onclick="showPage('experiences')">Experiences</a></li>
+          <li><a onclick="showPage('amenities')">Amenities</a></li>
+          <li><a onclick="showPage('gallery')">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Information</div>
+        <ul class="footer-links">
+          <li><a onclick="showPage('about')">About Us</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+          <li><a onclick="showPage('policies')">House Rules</a></li>
+          <li><a onclick="showPage('policies')">Cancellation Policy</a></li>
+          <li><a onclick="showPage('policies')">Pet Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Book Direct</div>
+        <ul class="footer-links">
+          <li><a onclick="showPage('booking')">Check Availability</a></li>
+          <li><a onclick="showPage('booking')">Primitive Sites</a></li>
+          <li><a onclick="showPage('booking')">Basic Tent</a></li>
+          <li><a onclick="showPage('booking')">Premium Glamping</a></li>
+        </ul>
+        <div style="margin-top:1.5rem;padding:0.875rem;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);border-radius:4px;font-size:0.72rem;color:rgba(245,240,232,0.55);line-height:1.6;">
+          <strong style="color:var(--gold)">📞 (352) 555-0198</strong><br>
+          <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="abc3cec7c7c4ebc8d2dbd9ced8d8c3c2cfcecadccad285c8c4c6">[email&#160;protected]</a><br>
+          Responds within 24 hours
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Cypress Hideaway Glamping & Retreat. All rights reserved. North-Central Florida.</div>
+      <div class="footer-copy">Book direct for the best rates · No platform fees</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== EMAIL POPUP ========== -->
+<div class="popup-overlay" id="emailPopup">
+  <div class="popup">
+    <button class="popup-close" onclick="closePopup()">✕</button>
+    <div class="popup-eyebrow">Exclusive Offer</div>
+    <h2>Get 10% Off<br>Your First Stay</h2>
+    <p class="popup-sub">Join our community of nature seekers. Get your exclusive discount code plus insider tips on the best times to visit and what to bring.</p>
+    <div class="popup-form">
+      <input class="popup-input" type="email" placeholder="your@email.com">
+      <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="claimDiscount()">Claim My 10% Discount</button>
+    </div>
+    <div class="popup-disclaimer">No spam. Unsubscribe anytime. Offer valid for new bookings only.</div>
+    <span class="popup-skip" onclick="closePopup()">No thanks, I'll pay full price</span>
+  </div>
+</div>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+(function() {
+
+// ── State ──────────────────────────────────────────────
+var currentRate = 160;
+var bookingNights = 2;
+
+var addonState = {
+  firewood:   { price: 12,  qty: 0, perNight: false, name: 'Firewood Bundle', emoji: '🪵', hasQty: true  },
+  ac:         { price: 25,  qty: 0, perNight: true,  name: 'AC Unit',         emoji: '❄️', hasQty: false },
+  smores:     { price: 10,  qty: 0, perNight: false, name: 'Experience Kit',   emoji: '🎒', hasQty: false },
+  stargazing: { price: 45,  qty: 0, perNight: false, name: 'Stargazing Kit',  emoji: '🔭', hasQty: false },
+  pet:        { price: 20,  qty: 0, perNight: false, name: 'Pet Fee',         emoji: '🐾', hasQty: true  },
+  earlyin:    { price: 30,  qty: 0, perNight: false, name: 'Early Check-In',  emoji: '🌅', hasQty: false },
+  lateout:    { price: 30,  qty: 0, perNight: false, name: 'Late Check-Out',  emoji: '🌙', hasQty: false },
+  basket:     { price: 55,  qty: 0, perNight: false, name: 'Welcome Basket',  emoji: '🧺', hasQty: false },
+};
+
+// ── Navigation ─────────────────────────────────────────
+window.showPage = function(name) {
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+  var target = document.getElementById('page-' + name);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+};
+
+window.toggleMenu = function() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+};
+
+// ── Add-ons ────────────────────────────────────────────
+window.toggleAddon = function(id) {
+  var a = addonState[id];
+  var el = document.getElementById('addon-' + id);
+  var qtyEl = document.getElementById('qty-' + id);
+  if (a.qty > 0) {
+    a.qty = 0;
+    el.classList.remove('selected');
+    if (qtyEl) qtyEl.style.display = 'none';
+  } else {
+    a.qty = 1;
+    el.classList.add('selected');
+    if (qtyEl) qtyEl.style.display = 'flex';
+    var qnum = document.getElementById('qnum-' + id);
+    if (qnum) qnum.textContent = 1;
+  }
+  recalcPrice();
+};
+
+window.changeQty = function(id, basePrice, delta) {
+  var a = addonState[id];
+  a.qty = Math.max(1, (a.qty || 1) + delta);
+  var qnum = document.getElementById('qnum-' + id);
+  if (qnum) qnum.textContent = a.qty;
+  recalcPrice();
+};
+
+// ── Accommodation selector ─────────────────────────────
+window.updatePrice = function(rate, name, evt) {
+  currentRate = rate;
+  var sidebarAccomm = document.getElementById('sidebar-accomm');
+  if (sidebarAccomm) sidebarAccomm.textContent = name;
+  document.querySelectorAll('.accomm-option').forEach(function(opt) { opt.classList.remove('selected'); });
+  var clicked = (evt || window.event).target.closest('.accomm-option');
+  if (clicked) clicked.classList.add('selected');
+  recalcPrice();
+};
+
+// ── Price calculation ──────────────────────────────────
+function recalcPrice() {
+  var rateLabel = document.getElementById('sidebar-rate-label');
+  var subtotalEl = document.getElementById('sidebar-subtotal');
+  var addonsList = document.getElementById('sidebar-addons-list');
+  var totalEl = document.getElementById('sidebar-total');
+  if (!rateLabel) return;
+
+  var subtotal = currentRate * bookingNights;
+  rateLabel.textContent = '$' + currentRate + ' \u00d7 ' + bookingNights + ' night' + (bookingNights !== 1 ? 's' : '');
+  subtotalEl.textContent = '$' + subtotal;
+
+  var addonTotal = 0;
+  var addonHTML = '';
+  Object.keys(addonState).forEach(function(id) {
+    var a = addonState[id];
+    if (a.qty > 0) {
+      var cost = a.perNight ? a.price * bookingNights * a.qty : a.price * a.qty;
+      addonTotal += cost;
+      var label = a.perNight
+        ? a.emoji + ' ' + a.name + ' \u00d7 ' + bookingNights + 'n'
+        : a.qty > 1
+          ? a.emoji + ' ' + a.name + ' \u00d7 ' + a.qty
+          : a.emoji + ' ' + a.name;
+      addonHTML += '<div class="sidebar-addon-line"><span>' + label + '</span><span>$' + cost + '</span></div>';
+    }
+  });
+  if (addonsList) addonsList.innerHTML = addonHTML;
+  if (totalEl) totalEl.textContent = '$' + (subtotal + addonTotal);
+}
+
+function updateNightsFromDates() {
+  var inputs = document.querySelectorAll('#page-booking input[type="date"]');
+  if (inputs.length >= 2 && inputs[0].value && inputs[1].value) {
+    var diff = Math.round((new Date(inputs[1].value) - new Date(inputs[0].value)) / 86400000);
+    if (diff > 0) { bookingNights = diff; recalcPrice(); }
+  }
+}
+
+// ── Booking submit ─────────────────────────────────────
+window.handleBookingSubmit = function() {
+  var checkbox = document.getElementById('legal-agree');
+  if (!checkbox || !checkbox.checked) {
+    alert('Please read and agree to the House Rules, Cancellation Policy, and Weather Policy before completing your reservation.');
+    return;
+  }
+  alert('🎉 Reservation Request Received!\n\nThank you for choosing Cypress Hideaway. We\'ll confirm your booking and send details to your email within 24 hours.\n\nWe look forward to hosting you!');
+};
+
+// ── Popup ──────────────────────────────────────────────
+window.closePopup = function() {
+  document.getElementById('emailPopup').classList.remove('visible');
+  sessionStorage.setItem('popupShown', 'true');
+};
+
+window.claimDiscount = function() {
+  var input = document.querySelector('.popup-input');
+  if (input && input.value && input.value.includes('@')) {
+    alert('🌿 Your 10% discount code: CYPRESS10\n\nCheck your email for confirmation and welcome tips!');
+    window.closePopup();
+  } else {
+    if (input) { input.style.borderColor = '#c84820'; input.placeholder = 'Please enter a valid email'; }
+  }
+};
+
+// ── Boot after DOM ready ───────────────────────────────
+function boot() {
+  // Close mobile menu on outside click
+  document.addEventListener('click', function(e) {
+    var menu = document.getElementById('mobileMenu');
+    if (menu && !e.target.closest('nav') && !e.target.closest('.mobile-menu')) {
+      menu.classList.remove('open');
+    }
+  });
+
+  // Date change listener
+  document.addEventListener('change', function(e) {
+    if (e.target.type === 'date') updateNightsFromDates();
+  });
+
+  // Nav scroll effect
+  window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(44,74,53,0.1)' : 'none';
+  });
+
+  // Set default dates
+  var today = new Date();
+  var tomorrow = new Date(today); tomorrow.setDate(tomorrow.getDate() + 1);
+  var inThree  = new Date(today); inThree.setDate(today.getDate() + 3);
+  var fmt = function(d) { return d.toISOString().split('T')[0]; };
+
+  var checkinEl  = document.getElementById('checkin');
+  var checkoutEl = document.getElementById('checkout');
+  if (checkinEl)  { checkinEl.value  = fmt(tomorrow); checkinEl.min  = fmt(today); }
+  if (checkoutEl) { checkoutEl.value = fmt(inThree);  checkoutEl.min = fmt(tomorrow); }
+
+  // Popup
+  setTimeout(function() {
+    if (!sessionStorage.getItem('popupShown')) {
+      var popup = document.getElementById('emailPopup');
+      if (popup) popup.classList.add('visible');
+    }
+  }, 4000);
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', boot);
+} else {
+  boot();
+}
+
+})(); // end IIFE</script>
+</body>
+</html>
